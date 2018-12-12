@@ -5,10 +5,11 @@
                     <div id="sidebar-wrapper">
                             <ul class="sidebar-nav">
                                 <li class="sidebar-brand"><a href="#" style="color:#fff">Dashboard</a></li>
-                                <li><a href="#">Nhân viên</a></li>
-                                <li><a href="#">Khách hàng</a></li>
-                                <li><a href="#">Dịch vụ</a></li>
-                                <li><a href="#">Lịch hẹn</a></li>
+                                <li><a href="http://localhost/codelgniter/index.php/employee/index">Nhân viên</a></li>
+                                <li><a href="http://localhost/codelgniter/index.php/customer/index">Khách hàng</a></li>
+                                <li><a href="http://localhost/codelgniter/index.php/service/index">Dịch vụ</a></li>
+                                <li><a href="http://localhost/codelgniter/index.php/appointment/index">Lịch hẹn</a></li>
+                                <li><a href="">Đơn hàng</a></li>
                             </ul>
                     </div>
                 </div>

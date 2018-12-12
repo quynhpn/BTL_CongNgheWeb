@@ -58,13 +58,13 @@
         <div class="row articles">
             <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairsidepart/index"><img src="<?php echo base_url(); ?>assets/img/tocdep3.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam SIDE PART</h3>
-                <p class="description">Mẫu tóc nam Side part đã có lịch sử từ rất lâu khoảng thời thế chiến thứ 2, vào thời kì đó rất nhiều người đàn ông đã để kiểu tóc này và...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <p class="description">Mẫu tóc nam Side part đã có lịch sử từ rất lâu khoảng thời thế chiến thứ 2, vào thời kì đó rất nhiều người đàn ông đã để kiểu tóc này và...</p><a href="http://localhost/codelgniter/index.php/hairsidepart/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
             <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairsport/index"><img src="<?php echo base_url(); ?>assets/img/tocdep4.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam SPORT</h3>
-                <p class="description">Bắt đầu xuất hiện từ những năm 1950, Quiff nhanh chóng trở thành một kiểu các kiểu tóc nam đẹp ...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <p class="description">Bắt đầu xuất hiện từ những năm 1950, Quiff nhanh chóng trở thành một kiểu các kiểu tóc nam đẹp ...</p><a href="http://localhost/codelgniter/index.php/hairsport/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
              <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairundercut/index"><img src="<?php echo base_url(); ?>assets/img/tocdep5.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam UNDERCUT</h3>
-                <p class="description">Kiểu tóc Undercut là kiểu tóc được nhiều người ưa thích bởi nó là sự kết hợp giữa cũ và mới nhưng nó đem lại sự quyết rũ và nam tính...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <p class="description">Kiểu tóc Undercut là kiểu tóc được nhiều người ưa thích bởi nó là sự kết hợp giữa cũ và mới nhưng nó đem lại sự quyết rũ và nam tính...</p><a href="http://localhost/codelgniter/index.php/hairundercut/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
             </div>
 </div>
 </div>
