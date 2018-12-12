@@ -1,0 +1,35 @@
+body{
+  background: #f7f9fc;
+  padding: 0px;
+  margin: 0px;
+}
+.row{
+  padding: 0px;
+  margin: 0px;
+}
+.col{
+  padding: 0px;
+  margin: 0px;
+}
+.container-fluid{
+  padding: 0px;
+  margin: 0px;
+}
+#home-body{
+  color: brown;
+}
+.container{
+  padding: 0;
+}
+/*Nav home site*/
+.me-nav{
+  background-color: black;
+}
+#me-footer{
+  background-color: black;
+  color: white;
+}
+/*Admin*/
+
+
+
