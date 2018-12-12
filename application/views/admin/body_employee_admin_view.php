@@ -2,42 +2,42 @@
     <div class="col-md-2">
     </div>
     <div class="container">
-        <div class="row mt-4">
-                    <h3 class="col-md-12 text-center">QUẢN LÝ KHÁCH HÀNG</h3>
+        <div class="row mt-3">
+            <h3 class="col-md-12 text-center">QUẢN LÝ NHÂN VIÊN</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="col-md-4">
+                        Tên nhân viên
+                    </label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" placeholder="Nhập tên người dùng" id="txtUserName" />
+                </div>
+            </div>
         </div>
         
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <div class="row">
-                    <label class="col-md-4 text-center">
-                        Tên khách hàng
-                    </label>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <input class="form-control" type="text" placeholder="Nhập tên khách hàng"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <label class="col-md-4 text-center">
-                        SĐT khách hàng
-                    </label>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <input class="form-control" type="text" placeholder="Nhập SĐT khách hàng"/>
-                        </div>
-                    </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="row">
+                <label class="col-md-4">
+                    Chức vụ
+                </label>
+                <div class="col-md-8">
+                    <select class="form-control" id="slPositionID">
+                        <option value="0">Tất cả</option>                                 
+                    </select>
                 </div>
             </div>
         </div>
-                <div class="row mt-3">
-                    <button class="btn btn-success col-md-2 offset-md-5">
-                        <i class="fa fa-search"></i>
-                        Tìm kiếm
-                    </button>
-                </div>
+    </div>
+    <div class="row mt-3">
+        <button class="btn btn-success col-md-2 offset-md-5">
+            <i class="fa fa-search"></i>
+            Tìm kiếm
+        </button>
+    </div>
                 <div class="row">
                     <button class="btn btn-info col-md-2 offset-md-9">
                         <i class="fa fa-user-plus"></i>
@@ -52,14 +52,18 @@
                         STT
                     </th>
                     <th>
-                        Tên khách hàng
+                        Mã nhân viên
                     </th>
                     <th>
-                        SĐT 
+                        Tên nhân viên
                     </th>
                     <th>
-                        Địa chỉ
+                        Số điện thoại 
+                    </th>
+                    <th>
+                        Email
                     </th>            
+                    <th>Chức vụ</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -69,7 +73,9 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>                        
+                    <td></td>
+                    <td></td>     
+                    <td></td>                   
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
