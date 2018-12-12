@@ -1,9 +1,8 @@
-                <div class="row">
-<div class="col-md-2">
-
-                </div>
-<div class="container">
-                                    <div class="row mt-4">
+ <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="container">
+        <div class="row mt-4">
                     <h3 class="col-md-12 text-center">QUẢN LÝ KHÁCH HÀNG</h3>
                 </div>
         
