@@ -71,5 +71,6 @@
              <div class="col-sm-6 col-md-4 item"><a href="<?php echo base_url();?>/index.php/hairmohican/index"><img src="<?php echo base_url(); ?>assets/img/tocdep2.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam MOHICAN</h3>
                 <p class="description">Nếu bạn là một người ưa thích sự phá cách trong thời trang và liên tục muốn làm mới phong cách của mình, thì Mohican chính là kiểu đầu hoàn hảo dành cho...</p><a href="<?php echo base_url();?>/index.php/hairmohican/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+
 </div>
 </div>

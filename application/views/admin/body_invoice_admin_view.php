@@ -3,7 +3,7 @@
     </div>
     <div class="container">
         <div class="row mt-4">
-                    <h3 class="col-md-12 text-center">QUẢN LÝ KHÁCH HÀNG</h3>
+                    <h3 class="col-md-12 text-center">QUẢN LÝ ĐƠN HÀNG</h3>
         </div>
         
         <div class="row mt-3">
@@ -15,18 +15,6 @@
                     <div class="col-md-8">
                         <div class="row">
                             <input class="form-control" type="text" placeholder="Nhập tên khách hàng"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <label class="col-md-4 text-center">
-                        SĐT khách hàng
-                    </label>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <input class="form-control" type="text" placeholder="Nhập SĐT khách hàng"/>
                         </div>
                     </div>
                 </div>
@@ -52,13 +40,13 @@
                         STT
                     </th>
                     <th>
-                        Tên khách hàng
+                        Mã đơn hàng
                     </th>
                     <th>
-                        SĐT 
+                        Tên khách hàng 
                     </th>
                     <th>
-                        Địa chỉ
+                        Danh sách dịch vụ
                     </th>            
                     <th></th>
                     <th></th>
