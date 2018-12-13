@@ -11,20 +11,20 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/codelgniter/index.php/home/index"style="padding-top:40px; font-size:25px; color:black;">TRANG CHỦ</a>
+            <a class="nav-link" href="<?php echo base_url();?>/index.php/home/index"style="padding-top:40px; font-size:25px; color:black;">TRANG CHỦ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/codelgniter/index.php/introduce/index" style="padding-top:40px; font-size:25px; color:black;">GIỚI THIỆU</a>
+            <a class="nav-link" href="<?php echo base_url();?>/index.php/introduce/index" style="padding-top:40px; font-size:25px; color:black;">GIỚI THIỆU</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/codelgniter/index.php/price/index"style="padding-top:40px; font-size:25px; color:black;">BẢNG GIÁ</a>
+            <a class="nav-link" href="<?php echo base_url();?>/index.php/price/index"style="padding-top:40px; font-size:25px; color:black;">BẢNG GIÁ</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/codelgniter/index.php/setcalendar/index"style="padding-top:40px; font-size:25px; color:black;">ĐẶT LỊCH</a>
+            <a class="nav-link" href="<?php echo base_url();?>/index.php/setcalendar/index"style="padding-top:40px; font-size:25px; color:black;">ĐẶT LỊCH</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/codelgniter/index.php/hairstyle/index"style="padding-top:40px; font-size:25px; color:black;">TÓC ĐẸP</a>
+            <a class="nav-link" href="<?php echo base_url();?>/index.php/hairstyle/index"style="padding-top:40px; font-size:25px; color:black;">TÓC ĐẸP</a>
           </li>
         
         </ul>

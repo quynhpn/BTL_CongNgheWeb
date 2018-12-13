@@ -52,10 +52,10 @@
                         STT
                     </th>
                     <th>
-                        Tên khách hàng
+                        Số điện thoại
                     </th>
                     <th>
-                        SĐT 
+                       Tên khách hàng 
                     </th>
                     <th>
                         Địa chỉ
@@ -64,12 +64,17 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>       
+            <tbody>  
+            <?php
+                $stt=0; 
+                foreach ($listCustomer as $row){
+                    $stt++;
+            ?>     
                 <tr class="table-warning">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                        
+                    <td><?php echo $stt?></td>
+                    <td><?php echo $row['SĐT']?></td>
+                    <td><?php echo $row['TenKH']?></td>
+                    <td><?php echo $row['DiaChi']?></td>                        
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
@@ -84,7 +89,10 @@
                             </i>
                         </button>
                     </td>
-                </tr>           
+                </tr>    
+                <?php
+                }
+                ?>       
             </tbody>
         </table> 
                 </div>

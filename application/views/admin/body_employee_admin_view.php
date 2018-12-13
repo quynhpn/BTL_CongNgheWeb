@@ -68,14 +68,19 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>       
+            <tbody>    
+            <?php
+            $stt=0;
+            foreach ($listEmployee as $row) {
+                $stt++;
+            ?>   
                 <tr class="table-warning">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>     
-                    <td></td>                   
+                    <td><?php echo $stt?></td>
+                    <td><?php echo $row['MaNV']?></td>
+                    <td><?php echo $row['TenNV']?></td>
+                    <td><?php echo $row['SĐTNV']?></td>
+                    <td><?php echo $row['Email']?></td>     
+                    <td><?php echo $row['ChucVu']?></td>                   
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
@@ -90,7 +95,11 @@
                             </i>
                         </button>
                     </td>
-                </tr>           
+                </tr>  
+                <?php
+                }
+                ?>         
+
             </tbody>
         </table> 
                 </div>
