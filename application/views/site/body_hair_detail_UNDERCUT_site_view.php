@@ -69,14 +69,14 @@
            
          
                 
-             <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairmohican/index"><img src="<?php echo base_url(); ?>assets/img/tocdep2.jpg" class="img-fluid" /></a>
+             <div class="col-sm-6 col-md-4 item"><a href="<?php echo base_url();?>/index.php/hairmohican/index"><img src="<?php echo base_url(); ?>assets/img/tocdep2.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam MOHICAN</h3>
-                <p class="description">Nếu bạn là một người ưa thích sự phá cách trong thời trang và liên tục muốn làm mới phong cách của mình...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
-              <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairsidepart/index"><img src="<?php echo base_url(); ?>assets/img/tocdep3.jpg" class="img-fluid" /></a>
+                <p class="description">Nếu bạn là một người ưa thích sự phá cách trong thời trang và liên tục muốn làm mới phong cách của mình...</p><a href="href="<?php echo base_url();?>/index.php/hairmohican/index"" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+              <div class="col-sm-6 col-md-4 item"><a href="<?php echo base_url();?>/index.php/hairsidepart/index"><img src="<?php echo base_url(); ?>assets/img/tocdep3.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam SIDE PART</h3>
-                <p class="description">Mẫu tóc nam Side part đã có lịch sử từ rất lâu khoảng thời thế chiến thứ 2, vào thời kì đó rất nhiều người đàn ông đã để kiểu tóc này và...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
-              <div class="col-sm-6 col-md-4 item"><a href="http://localhost/codelgniter/index.php/hairsport/index"><img src="<?php echo base_url(); ?>assets/img/tocdep4.jpg" class="img-fluid" /></a>
+                <p class="description">Mẫu tóc nam Side part đã có lịch sử từ rất lâu khoảng thời thế chiến thứ 2, vào thời kì đó rất nhiều người đàn ông đã để kiểu tóc này và...</p><a href="<?php echo base_url();?>/index.php/hairsidepart/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+              <div class="col-sm-6 col-md-4 item"><a href="<?php echo base_url();?>/index.php/hairsport/index"><img src="<?php echo base_url(); ?>assets/img/tocdep4.jpg" class="img-fluid" /></a>
                 <h3 class="name">Tóc nam SPORT</h3>
-                <p class="description">Bắt đầu xuất hiện từ những năm 1950, Quiff nhanh chóng trở thành một kiểu các kiểu tóc nam đẹp ưa thích khi bạn có thể bất chấp tuổi tác...</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>  
+                <p class="description">Bắt đầu xuất hiện từ những năm 1950, Quiff nhanh chóng trở thành một kiểu các kiểu tóc nam đẹp ưa thích khi bạn có thể bất chấp tuổi tác...</p><a href="<?php echo base_url();?>/index.php/hairsport/index" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>  
 </div>
 </div>
