@@ -64,13 +64,19 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>       
+            <tbody>      
+                <?php 
+                $stt=0;
+                foreach($listAppointment as $row)
+                {
+                    $stt ++;
+               ?> 
                 <tr class="table-warning">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $stt ?></td>
+                    <td><?php echo $row['GioHen']?></td>
+                    <td><?php echo $row['NgayHen']?></td>
+                    <td><?php echo $row['MaNV']?></td>
+                    <td><?php echo $row['SĐT']?></td>
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
@@ -85,7 +91,9 @@
                             </i>
                         </button>
                     </td>
-                </tr>           
+                </tr>  
+                <?php 
+                }?>         
             </tbody>
         </table> 
      </div>
