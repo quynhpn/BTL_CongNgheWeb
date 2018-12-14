@@ -52,13 +52,16 @@
                         Tên khách hàng
                     </th>
                     <th>
-                        Nhân viên
+                       Mã Nhân viên
                     </th>
                     <th>
                         SĐT Khách hàng
                     </th>
                     <th>
                         Giờ hẹn
+                    </th>
+                    <th>
+                        Ngày hẹn
                     </th>
                     <th></th>
                     <th></th>
@@ -73,10 +76,11 @@
                ?> 
                 <tr class="table-warning">
                     <td><?php echo $stt ?></td>
-                    <td><?php echo $row['GioHen']?></td>
-                    <td><?php echo $row['NgayHen']?></td>
+                    <td><?php echo $row['TenKH']?></td>
                     <td><?php echo $row['MaNV']?></td>
                     <td><?php echo $row['SĐT']?></td>
+                    <td><?php echo $row['GioHen']?></td>
+                    <td><?php echo $row['NgayHen']?></td>
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
