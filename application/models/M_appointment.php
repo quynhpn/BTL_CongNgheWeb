@@ -4,7 +4,7 @@ class M_appointment extends CI_Model{
         parent::__construct();
     }
     public function listAppointment(){
-        $query=$this->db->query("SELECT * FROM lichhen");
+        $query=$this->db->query("SELECT * FROM lichhen JOIN khachhang ON khachhang.SĐT=lichhen.SĐT");
         return $query->result_array();
     }
 }
