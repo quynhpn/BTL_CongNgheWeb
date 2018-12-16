@@ -52,12 +52,33 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>       
+            <tbody>  
+            <?php
+                $stt=0; 
+                foreach ($listInvoice as $row){
+                $stt++;
+            ?>       
                 <tr class="table-warning">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                        
+                    <td><?php echo $stt?></td>
+                    <td><?php echo $row['MaDH']?></td>
+                    <td><?php echo $row['TenKH']?></td>
+                    <td>
+                        <table>
+                            <?php
+                                $stt=0; 
+                                foreach ($listInvoiceDetail as $row2){
+                                $stt++;
+                            ?>  
+                            <tr>
+                                <td><?php echo $stt; ?></td>    
+                                <td><?php echo $row2['TenDV']; ?></td>
+                                <td><?php echo $row2['Gia']; ?></td>    
+                            </tr>
+                            <?php
+                            }
+                            ?>
+                        </table>
+                    </td>                        
                     <td>
                         <button class="btn btn-warning">
                             <i class="fa fa-edit">
@@ -72,11 +93,15 @@
                             </i>
                         </button>
                     </td>
-                </tr>           
+                </tr> 
+                <?php
+                }
+                ?>           
             </tbody>
         </table> 
-                </div>
-                </div>
-                </div>
+     </div>
+   </div>
+</div>
+
                 
                 
