@@ -1,17 +1,15 @@
- <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="container">
-        <div class="row mt-3">
+  <div class="col-md-6 col-lg-7">
+                      <div class="container-fluid">
+                <div class="row mt-3">
             <h3 class="col-md-12 text-center">QUẢN LÝ NHÂN VIÊN</h3>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-4">
+                    <label class="col-md-5">
                         Tên nhân viên
                     </label>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <input class="form-control" type="text" placeholder="Nhập tên người dùng" id="txtUserName" />
                 </div>
             </div>
@@ -19,12 +17,12 @@
         
     </div>
     <div class="row mt-3">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="row">
-                <label class="col-md-4">
+                <label class="col-md-5">
                     Chức vụ
                 </label>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <select class="form-control" id="slPositionID">
                         <option value="0">Tất cả</option>                                 
                     </select>
@@ -101,9 +99,8 @@
                 ?>         
 
             </tbody>
-        </table> 
-                </div>
-                </div>
-                </div>
+        </table>
+     </div>
+    </div>
                 
                 

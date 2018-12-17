@@ -1,7 +1,6 @@
- <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="container">
+  <div class="col-md-6 col-lg-7">
+    <div class="container-fluid">
+        <div class="container-fluid">
        <div class="row mt-3">
             <h3 class="col-md-12 text-center">QUẢN LÝ DỊCH VỤ</h3>
         </div>
@@ -85,8 +84,7 @@
                 ?>           
             </tbody>
         </table> 
-      </div>
+     </div>
     </div>
-  </div>
                 
                 

@@ -1,7 +1,8 @@
+    <div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col" style=" padding-right:0px; padding-left:0px;">
-                    <nav class="navbar navbar-expand navbar-dark bg-dark static-top" style="color: #fff;">
+                    <nav class="navbar navbar-expand navbar-dark bg-dark static-top navbar-fixed-top" style="color: #fff;">
                         <a class="navbar-brand mr-1">Start Bootstrap</a>
                         <button class="btn btn-link btn-sm text-white order-1 order-sm-0">
                             <i class="fa fa-bars">
@@ -20,14 +21,17 @@
                     <ul class="navbar-nav ml-auto ml-md-0">
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <i class="fas fa-user-circle fa-fw"></i>
-
+                                <i class="fa fa-user fa-fw"></i>
                             </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#"><span style="color:black;">Đăng xuất</span></a></li>
+                            </ul>
                         </li>
                     </ul>
                  </nav>
                 </div>
             </div>
         </div>
+    </div>
 
     
