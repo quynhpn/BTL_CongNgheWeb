@@ -8,8 +8,13 @@ class Appointment extends CI_Controller {
       $this->getlistAppointment();
     }
     public function getlistAppointment(){
-      $this ->load->model("M_appointment");
-      $data['listAppointment']=$this->M_appointment->listAppointment();
+      $this->load->model("M_appointment");;
+        $config['total_rows'] = $this->M_appointment->countAll();
+        $config['base_url'] = base_url()."index.php/appointment/index";
+        $config["per_page"]=1;
+      $start = $this->uri->segment(3);
+       $this->load->library('pagination',$config);
+      $data['listAppointment'] = $this->M_appointment->getList($start,$config['per_page']);
       $this->load->view('admin/appointment_admin_view.php',$data);
     }    
 }

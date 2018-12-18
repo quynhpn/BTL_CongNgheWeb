@@ -1,30 +1,28 @@
- <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="container">
+            <div class="col-md-6 col-lg-10">
+                      <div class="container-fluid">
         <div class="row mt-4">
                     <h3 class="col-md-12 text-center">QUẢN LÝ KHÁCH HÀNG</h3>
         </div>
         
         <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-4 text-center">
+                    <label class="col-md-5 text-right">
                         Tên khách hàng
                     </label>
-                    <div class="col-md-8">
+                    <div class="col-md-5">
                         <div class="row">
                             <input class="form-control" type="text" placeholder="Nhập tên khách hàng"/>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-4 text-center">
+                    <label class="col-md-5 text-right mt-3">
                         SĐT khách hàng
                     </label>
-                    <div class="col-md-8">
+                    <div class="col-md-5 mt-3">
                         <div class="row">
                             <input class="form-control" type="text" placeholder="Nhập SĐT khách hàng"/>
                         </div>
@@ -95,8 +93,16 @@
                 ?>       
             </tbody>
         </table> 
-                </div>
-                </div>
-                </div>
+     </div>
+     <div class="text-center">
+        <?php
+            echo  $this->pagination->create_links();
+        ?>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
                 
                 

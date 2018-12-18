@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Steps-Progressbar.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Navbar-Fixed-Side.css" />
     <link rel="stylesheet" href="assets/css/Sidebar-Menu.css" />
-    <link rel="stylessheet" href="dashboard.css" >  
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>

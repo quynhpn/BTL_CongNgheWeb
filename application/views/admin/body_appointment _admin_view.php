@@ -1,7 +1,6 @@
- <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="container">
+
+ <div class="col-md-6 col-lg-10">
+                      <div class="container-fluid">
         <div class="row mt-3">
                     <h3 class="col-md-12 text-center">QUẢN LÝ LỊCH HẸN</h3>
         </div>
@@ -101,7 +100,17 @@
             </tbody>
         </table> 
      </div>
+     <div class="text-center">
+        <?php
+            echo  $this->pagination->create_links();
+        ?>
     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
 </div>
+
                 
                 
