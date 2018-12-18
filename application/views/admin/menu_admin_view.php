@@ -1,7 +1,7 @@
     <div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-2">
                   <div id="wrapper">
                     <div id="sidebar-wrapper">
                             <ul class="sidebar-nav">

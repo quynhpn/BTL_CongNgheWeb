@@ -1,6 +1,6 @@
 
 
-  <div class="col-md-6 col-lg-7">
+  <div class="col-md-6 col-lg-10">
                       <div class="container-fluid">
                      <div class="row mt-4">
                     <h3 class="col-md-12 text-center">QUẢN LÝ ĐƠN HÀNG</h3>
@@ -9,10 +9,10 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-5 text-center">
+                    <label class="col-md-5 text-right">
                         Tên khách hàng
                     </label>
-                    <div class="col-md-7">
+                    <div class="col-md-5">
                         <div class="row">
                             <input class="form-control" type="text" placeholder="Nhập tên khách hàng"/>
                         </div>
@@ -100,6 +100,15 @@
             </tbody>
         </table> 
      </div>
+     <div class="text-center">
+        <?php
+            echo  $this->pagination->create_links();
+        ?>
+    </div>
+    </div>
+                    </div>
+            </div>
+        </div>
     </div>
                 
                 

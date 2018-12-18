@@ -1,4 +1,4 @@
-  <div class="col-md-6 col-lg-7">
+  <div class="col-md-6 col-lg-10">
                       <div class="container-fluid">
                 <div class="row mt-3">
             <h3 class="col-md-12 text-center">QUẢN LÝ NHÂN VIÊN</h3>
@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-5">
+                    <label class="col-md-5 text-right">
                         Tên nhân viên
                     </label>
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <input class="form-control" type="text" placeholder="Nhập tên người dùng" id="txtUserName" />
                 </div>
             </div>
@@ -19,10 +19,10 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="row">
-                <label class="col-md-5">
+                <label class="col-md-5 text-right">
                     Chức vụ
                 </label>
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <select class="form-control" id="slPositionID">
                         <option value="0">Tất cả</option>                                 
                     </select>
@@ -101,6 +101,15 @@
             </tbody>
         </table>
      </div>
+     <div class="text-center">
+        <?php
+            echo  $this->pagination->create_links();
+        ?>
+    </div>
+    </div>
+                    </div>
+            </div>
+        </div>
     </div>
                 
                 

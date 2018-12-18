@@ -1,4 +1,4 @@
-  <div class="col-md-6 col-lg-7">
+  <div class="col-md-6 col-lg-10">
     <div class="container-fluid">
         <div class="container-fluid">
        <div class="row mt-3">
@@ -85,6 +85,15 @@
             </tbody>
         </table> 
      </div>
+     <div class="text-center">
+        <?php
+            echo  $this->pagination->create_links();
+        ?>
     </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
                 
                 
