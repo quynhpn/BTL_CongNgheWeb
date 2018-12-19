@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark navbar-fixed-top" style="color: #fff;">
+<nav class="navbar navbar-expand navbar-dark bg-dark sticky-top" style="color: #fff;">
     <a class="navbar-brand mr-1">Start Bootstrap</a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0">
         <i class="fa fa-bars">
@@ -24,4 +24,5 @@
             </ul>
         </li>
     </ul>
+
 </nav>  

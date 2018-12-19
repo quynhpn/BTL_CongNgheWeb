@@ -9,7 +9,7 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-5 text-right">
+                    <label class="col-md-5 text-right"s>
                         Tên khách hàng
                     </label>
                     <div class="col-md-5">
@@ -63,7 +63,7 @@
                     <td><?php echo $row['MaDH']?></td>
                     <td><?php echo $row['TenKH']?></td>
                     <td>
-                        <table>
+                        <table class="table table-bordered table-hover" style="background-color:#DEB887;">
                             <?php
                                 $stt=0; 
                                 foreach ($listInvoiceDetail as $row2){

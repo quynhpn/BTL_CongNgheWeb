@@ -37,7 +37,7 @@
         </button>
     </div>
                 <div class="row">
-                    <button class="btn btn-info col-md-2 offset-md-9">
+                    <button class="btn btn-info col-md-2 offset-md-9" data-toggle="modal" data-target="#add-modal">
                         <i class="fa fa-user-plus"></i>
                         Thêm mới
                     </button>
@@ -80,7 +80,7 @@
                     <td><?php echo $row['Email']?></td>     
                     <td><?php echo $row['ChucVu']?></td>                   
                     <td>
-                        <button class="btn btn-warning">
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>
@@ -108,6 +108,136 @@
     </div>
     </div>
                     </div>
+            </div>
+        </div>
+    </div>
+
+    <div >
+        <div class="modal" tabindex="-1" role="dialog" id="add-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thêm Nhân Viên</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form  ng-controller="ctrlCategory" name="formCategory">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Tên nhân viên
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Số điện thoại
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Email
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label for="exampleFormControlSelect1">Chức vụ</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Nhân viên</option>
+                                        <option>Lễ tân</option>
+                                    </select>                                   
+                                </div>                                                           
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="SaveCategory()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div >
+        <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sửa Nhân Viên</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form  ng-controller="ctrlCategory" name="formCategory">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Tên nhân viên
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Số điện thoại
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Email
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label for="exampleFormControlSelect1">Chức vụ</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Nhân viên</option>
+                                        <option>Lễ tân</option>
+                                    </select>                                   
+                                </div>                                                           
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="SaveCategory()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
