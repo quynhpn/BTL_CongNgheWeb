@@ -9,7 +9,7 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="row">
-                    <label class="col-md-5 text-right">
+                    <label class="col-md-5 text-right"s>
                         Tên khách hàng
                     </label>
                     <div class="col-md-5">
