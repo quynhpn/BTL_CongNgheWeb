@@ -63,7 +63,7 @@
                     <td><?php echo $row['MaDH']?></td>
                     <td><?php echo $row['TenKH']?></td>
                     <td>
-                        <table>
+                        <table class="table table-bordered table-hover" style="background-color:#DEB887;">
                             <?php
                                 $stt=0; 
                                 foreach ($listInvoiceDetail as $row2){
