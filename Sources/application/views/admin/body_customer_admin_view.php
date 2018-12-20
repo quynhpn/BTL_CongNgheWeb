@@ -81,11 +81,11 @@
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">
+                        <a class="btn btn-danger" href="<?php echo base_url() . "index.php/customer/delete/" . $row['SĐT'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>
-                        </button>
+                        </a>
                     </td>
                 </tr>    
                 <?php

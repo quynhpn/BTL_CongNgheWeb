@@ -18,12 +18,10 @@
                     <div class="col-md-6">
                         <div class="row">
                             <label class="col-md-4">
-                                Nhân viên
+                                SĐT
                             </label>
                             <div class="col-md-8">
-                                <select class="form-control" id="slPositionID">
-                                    <option value="0">Tất cả</option>                                     
-                                </select>
+                                <input class="form-control" type="text" placeholder="Nhập số điện thoại khách hàng" id="txtPhoneName" />
                             </div>
                         </div>
                     </div>
@@ -51,9 +49,6 @@
                         Tên khách hàng
                     </th>
                     <th>
-                       Mã Nhân viên
-                    </th>
-                    <th>
                         SĐT Khách hàng
                     </th>
                     <th>
@@ -76,23 +71,22 @@
                 <tr class="table-warning">
                     <td><?php echo $stt ?></td>
                     <td><?php echo $row['TenKH']?></td>
-                    <td><?php echo $row['MaNV']?></td>
                     <td><?php echo $row['SĐT']?></td>
                     <td><?php echo $row['GioHen']?></td>
                     <td><?php echo $row['NgayHen']?></td>
                     <td>
-                        <button class="btn btn-warning">
+                        <button class="btn btn-warning" href="<?php echo base_url() . "index.php/appointment/delete/" . $row['SĐT'];?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">
+                        <a class="btn btn-danger">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>
-                        </button>
+                        </a>
                     </td>
                 </tr>  
                 <?php 
