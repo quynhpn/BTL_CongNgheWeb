@@ -87,11 +87,11 @@
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">
+                        <a class="btn btn-danger" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>
-                        </button>
+                        </a>
                     </td>
                 </tr>  
                 <?php
@@ -131,7 +131,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -141,7 +141,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -151,7 +151,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="txtEmployeeEmailInsert" name="" ng-model="" placeholder="Nhập email nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -159,7 +159,7 @@
                                     <label for="exampleFormControlSelect1">Chức vụ</label>
                                 </div>
                                 <div class="col-md-7">
-                                    <select class="form-control" id="exampleFormControlSelect1">
+                                    <select class="form-control" id="txtEmployeePositionInsert">
                                         <option>Nhân viên</option>
                                         <option>Lễ tân</option>
                                     </select>                                   
@@ -169,7 +169,7 @@
                     </form>
                     
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveCategory()">Lưu</button>
+                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
                     </div>
                 </div>

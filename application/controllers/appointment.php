@@ -8,7 +8,7 @@ class Appointment extends CI_Controller {
       $this->getlistAppointment();
     }
     public function getlistAppointment(){
-      $this->load->model("M_appointment");;
+      $this->load->model("M_appointment");
         $config['total_rows'] = $this->M_appointment->countAll();
         $config['base_url'] = base_url()."index.php/appointment/index";
         $config["per_page"]=1;
@@ -17,4 +17,10 @@ class Appointment extends CI_Controller {
       $data['listAppointment'] = $this->M_appointment->getList($start,$config['per_page']);
       $this->load->view('admin/appointment_admin_view.php',$data);
     }    
+    public function delete($id){
+      $this->load->model("M_appointment");
+      $this->M_appointment->deleteByID($id);
+      redirect(base_url()."index.php/appointment/index");
+
+    }
 }
