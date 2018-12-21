@@ -37,7 +37,7 @@
         </button>
     </div>
                 <div class="row">
-                    <button class="btn btn-info col-md-2 offset-md-9" data-toggle="modal" data-target="#add-modal" onclick = "OpenForm()">
+                    <button class="btn btn-info col-md-2 offset-md-9" data-toggle="modal" data-target="#add-modal">
                         <i class="fa fa-user-plus"></i>
                         Thêm mới
                     </button>

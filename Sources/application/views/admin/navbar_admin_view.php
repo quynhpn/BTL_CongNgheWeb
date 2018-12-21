@@ -15,14 +15,15 @@
         </div>
     </form>
     <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <i class="fa fa-user fa-fw"></i>
-            </a>
-                <ul class="dropdown-menu">
-                <li><a href="#"><span style="color:black;">Đăng xuất</span></a></li>
-            </ul>
-        </li>
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                    <a class="dropdown-item" href="#">Sửa thông tin cá nhân</a>
+                </div>
+            </li>
     </ul>
 
 </nav>  
