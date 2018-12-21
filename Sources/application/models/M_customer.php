@@ -17,9 +17,7 @@ class M_customer extends CI_Model{
         $query=$this->db->query("SELECT * FROM khachhang WHERE IsActive <> 0 limit $start , $size;");
         return $query->result_array(); 
     }
-    public function deleteByID($id){
-        $this->db->query("UPDATE `khachhang` SET `IsActive`=0 WHERE  SĐT='$id';");
-    }
+
 
 }
 ?>
