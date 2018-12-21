@@ -48,8 +48,6 @@
                     <th>
                         Danh sách dịch vụ
                     </th>            
-                    <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>  
@@ -79,20 +77,6 @@
                             ?>
                         </table>
                     </td>                        
-                    <td>
-                        <button class="btn btn-warning">
-                            <i class="fa fa-edit">
-                                Sửa
-                            </i>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">
-                           <i class="fa fa-trash">
-                                Xóa
-                            </i>
-                        </button>
-                    </td>
                 </tr> 
                 <?php
                 }

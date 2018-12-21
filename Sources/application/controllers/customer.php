@@ -17,9 +17,4 @@ class Customer extends CI_Controller {
       $data['listCustomer'] = $this->M_customer->getList($start,$config['per_page']);
       $this->load->view('admin/customer_admin_view.php',$data);
     }
-    public function delete($id){
-      $this->load->model("M_customer");
-      $this->M_customer->deleteByID($id);
-      redirect(base_url()."index.php/customer/index");
-    }    
 }

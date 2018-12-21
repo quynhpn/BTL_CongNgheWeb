@@ -59,7 +59,6 @@
                         Địa chỉ
                     </th>            
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>  
@@ -79,13 +78,6 @@
                                 Sửa
                             </i>
                         </button>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger" href="<?php echo base_url() . "index.php/customer/delete/" . $row['SĐT'];?>">
-                           <i class="fa fa-trash">
-                                Xóa
-                            </i>
-                        </a>
                     </td>
                 </tr>    
                 <?php
