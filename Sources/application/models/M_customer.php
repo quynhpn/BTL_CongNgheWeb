@@ -9,12 +9,12 @@ class M_customer extends CI_Model{
       return $query->result_array();
     }
     public function countAll(){
-        $query=$this->db->query("SELECT * FROM khachhang WHERE IsActive <> 0;");
+        $query=$this->db->query("SELECT * FROM khachhang WHERE HoatDong <> 0;");
         return $query->num_rows();
     }
     public function getList($start,$size){
         $start=isset($start) ? $start : 0;
-        $query=$this->db->query("SELECT * FROM khachhang WHERE IsActive <> 0 limit $start , $size;");
+        $query=$this->db->query("SELECT * FROM khachhang WHERE HoatDong <> 0 limit $start , $size;");
         return $query->result_array(); 
     }
 

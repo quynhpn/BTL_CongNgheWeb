@@ -69,7 +69,7 @@
             ?>     
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
-                    <td><?php echo $row['SĐT']?></td>
+                    <td><?php echo $row['SDTKH']?></td>
                     <td><?php echo $row['TenKH']?></td>
                     <td><?php echo $row['DiaChi']?></td>                        
                     <td>

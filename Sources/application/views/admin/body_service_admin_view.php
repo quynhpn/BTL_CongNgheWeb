@@ -72,7 +72,7 @@
                         </button>
                     </td>
                     <td>
-                        <a class="btn btn-danger" href="<?php echo base_url() . "index.php/service/delete/" . $row['MaDV'];?>">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/service/delete/" . $row['MaDV'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>

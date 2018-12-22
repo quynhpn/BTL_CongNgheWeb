@@ -71,7 +71,7 @@
                 <tr class="table-warning">
                     <td><?php echo $stt ?></td>
                     <td><?php echo $row['TenKH']?></td>
-                    <td><?php echo $row['SĐT']?></td>
+                    <td><?php echo $row['SDTKH']?></td>
                     <td><?php echo $row['GioHen']?></td>
                     <td><?php echo $row['NgayHen']?></td>
                     <td>
@@ -82,7 +82,7 @@
                         </button>
                     </td>
                     <td>
-                        <a class="btn btn-danger"href="<?php echo base_url() . "index.php/appointment/delete/" . $row['SĐT'];?>">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/appointment/delete/" . $row['SDTKH'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>

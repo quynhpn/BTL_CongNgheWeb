@@ -22,4 +22,7 @@ class Employee extends CI_Controller {
       $this->M_employee->deleteByID($id);
       redirect(base_url()."index.php/employee/index");
     }  
+    public function addEmployee(){
+      print_r($_POST);
+    }
 }
