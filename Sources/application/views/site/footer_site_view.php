@@ -2,8 +2,9 @@
    <div class="row"style="background-color:black; color:white;">
       <div class="container" >
       <div class="row mt-3">
-        <div class="col-sm-6 col-md-4 footer-navigation mt-3">
+        <div class="col-sm-6 col-md-4 footer-navigation mt-3 text-center">
             <img src="<?php echo base_url(); ?>assets/img/aaa.png" alt="logo" style="width:150px; height:auto;">
+            <h5 class="mt-4 text-warning">Giờ phục vụ :09h00-21h30(kể cả T7 và CN)</h5>
         </div>
         <div class="col-sm-6 col-md-5 footer-contacts mt-5" style="font-size:20px;">
             <div>
