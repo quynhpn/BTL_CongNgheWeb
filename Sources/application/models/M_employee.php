@@ -4,16 +4,16 @@ class M_employee extends CI_Model{
   parent::__construct();
 }
   public function listEmployee(){
-    $query=$this->db->query("SELECT * FROM nhanvien JOIN chucvu ON nhanvien.MaCV=chucvu.MaCV;");
+    $query=$this->db->query("SELECT * FROM nhanvien;");
     return $query->result_array();
   }
   public function countAll(){
-        $query=$this->db->query("SELECT * FROM nhanvien JOIN chucvu ON nhanvien.MaCV=chucvu.MaCV WHERE nhanvien.HoatDong <> 0;");
+        $query=$this->db->query("SELECT * FROM nhanvien WHERE nhanvien.HoatDong <> 0;");
         return $query->num_rows();
     }
     public function getList($start,$size){
         $start=isset($start) ? $start : 0;
-        $query=$this->db->query("SELECT * FROM nhanvien JOIN chucvu ON nhanvien.MaCV=chucvu.MaCV WHERE nhanvien.HoatDong <> 0 limit $start , $size;");
+        $query=$this->db->query("SELECT * FROM nhanvien WHERE nhanvien.HoatDong <> 0 limit $start , $size;");
         return $query->result_array(); 
     }
     public function deleteByID($id){
