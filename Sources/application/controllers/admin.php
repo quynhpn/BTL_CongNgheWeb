@@ -12,16 +12,25 @@ class Admin extends CI_Controller {
 
     public function index()
     {
-      echo 'Đây là trang Admin';
-    }
-    public function ds_nhan_su()
-    {
-      $this->load->model('nhan_su_model');
-      $nhansu = $this->nhan_su_model->htds_nhansu();
-      foreach ($nhansu as $row) {
-          $this->load->view('admin/ds_nhan_su_view',$row);
-      }
-      
+      $this->load->model("M_employee");
+      $data['countEmployee'] = $this->M_employee->countAll();
+
+      $this->load->model("M_customer");
+      $data['countCustomer'] = $this->M_customer->countAll();
+
+      $this->load->model("M_appointment");
+      $data['countAppointment'] = $this->M_appointment->countAll();
+
+      $this->load->model("M_invoice");
+      $data['countInvoice'] = $this->M_invoice->countAll();
+
+      $this->load->model("M_service");
+      $data['countService'] = $this->M_service->countAll();
+
+      $this->load->model("M_thewords");
+      $data['countTheWords'] = $this->M_thewords->countAll();
+      $this->load->view('admin/home_admin_view.php',$data);
+
     }
   
     

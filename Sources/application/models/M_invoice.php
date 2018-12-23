@@ -5,7 +5,7 @@ class M_invoice extends CI_Model{
     }
 
     // public function listInvoice(){
-    //   $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SĐT = khachhang.SĐT");
+    //   $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SDTKH = khachhang.SDTKH");
     //   return $query->result_array();
     // }
     public function listInvoiceDetail(){
@@ -13,12 +13,12 @@ class M_invoice extends CI_Model{
       return $query->result_array();
     }
     public function countAll(){
-        $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SĐT = khachhang.SĐT");
+        $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SDTKH = khachhang.SDTKH");
         return $query->num_rows();
     }
     public function getList($start,$size){
         $start=isset($start) ? $start : 0;
-        $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SĐT = khachhang.SĐT limit $start , $size;");
+        $query=$this->db->query("SELECT * FROM donhang JOIN chitietdh ON donhang.MaDH = chitietdh.MaDH JOIN khachhang on donhang.SDTKH = khachhang.SDTKH limit $start , $size;");
         return $query->result_array(); 
     }
 }

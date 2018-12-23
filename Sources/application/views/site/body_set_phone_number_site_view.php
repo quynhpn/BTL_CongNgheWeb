@@ -26,7 +26,7 @@
   <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-3"></div>
-                <div class="col-md-4 col-lg-6"style="background:#c2c4ae;">
+                <div class="col-md-4 col-lg-6"style="background:#c2c4ae;>
                     <h5>Chào mừng đến với BarBer Shop. Đặt lịch ngay!</h5>
                 </div>
                 <div class="col-md-4 col-lg-3"></div>

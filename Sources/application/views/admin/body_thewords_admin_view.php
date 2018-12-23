@@ -1,20 +1,18 @@
-
-
-  <div class="col-md-6 col-lg-10">
+<div class="col-md-6 col-lg-10">
                       <div class="container-fluid">
                      <div class="row mt-4">
-                    <h3 class="col-md-12 text-center">QUẢN LÝ ĐƠN HÀNG</h3>
+                    <h3 class="col-md-12 text-center">QUẢN LÝ BÀI VIẾT</h3>
         </div>
         
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="row">
                     <label class="col-md-5 text-right"s>
-                        Tên khách hàng
+                        Tên bài viết
                     </label>
                     <div class="col-md-5">
                         <div class="row">
-                            <input class="form-control" type="text" placeholder="Nhập tên khách hàng"/>
+                            <input class="form-control" type="text" placeholder="Nhập tên bài viết"/>
                         </div>
                     </div>
                 </div>
@@ -40,53 +38,49 @@
                         STT
                     </th>
                     <th>
-                        Mã đơn hàng
+                        Mã bài viết
                     </th>
                     <th>
-                        Tên khách hàng 
+                        Tên bài viết 
                     </th>
                     <th>
-                        Danh sách dịch vụ
-                    </th>            
+                        Giới thiệu
+                    </th>   
+                    <th>
+                        Chi tiết
+                    </th> 
+                    <th>
+                        Link
+                    </th> 
+                    <th>
+                        Mã nhân viên
+                    </th>         
                 </tr>
             </thead>
             <tbody>  
             <?php
                 $stt=0; 
-                foreach ($listInvoice as $row){
+                //foreach ($listWords as $row){
                 $stt++;
             ?>       
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
-                    <td><?php echo $row['MaDH']?></td>
-                    <td><?php echo $row['TenKH']?></td>
-                    <td>
-                        <table class="table table-bordered table-hover" style="background-color:#DEB887;">
-                            <?php
-                                $stt=0; 
-                                foreach ($listInvoiceDetail as $row2){
-                                $stt++;
-                            ?>  
-                            <tr>
-                                <td><?php echo $stt; ?></td>    
-                                <td><?php echo $row2['TenDV']; ?></td>
-                                <td><?php echo $row2['Gia']; ?></td>    
-                            </tr>
-                            <?php
-                            }
-                            ?>
-                        </table>
-                    </td>                        
+                    <td><?php //echo $row['MaDH']?></td>
+                    <td><?php //echo $row['TenKH']?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>                        
                 </tr> 
                 <?php
-                }
+                //}
                 ?>           
             </tbody>
         </table> 
      </div>
      <div class="text-center">
         <?php
-            echo  $this->pagination->create_links();
+            //echo  $this->pagination->create_links();
         ?>
     </div>
     </div>
@@ -94,7 +88,3 @@
             </div>
         </div>
     </div>
-
-    
-                
-                

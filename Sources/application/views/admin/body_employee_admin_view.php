@@ -50,6 +50,12 @@
                         STT
                     </th>
                     <th>
+                        Tài khoản
+                    </th>
+                    <th>
+                        Mật khẩu
+                    </th>
+                    <th>
                         Mã nhân viên
                     </th>
                     <th>
@@ -74,11 +80,13 @@
             ?>   
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
+                    <td></td>
+                    <td></td>
                     <td><?php echo $row['MaNV']?></td>
                     <td><?php echo $row['TenNV']?></td>
-                    <td><?php echo $row['SĐTNV']?></td>
+                    <td><?php echo $row['SDTNV']?></td>
                     <td><?php echo $row['Email']?></td>     
-                    <td><?php echo $row['ChucVu']?></td>                   
+                    <td><?php echo $row['MaCV']?></td>                   
                     <td>
                         <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
                             <i class="fa fa-edit">
@@ -87,7 +95,7 @@
                         </button>
                     </td>
                     <td>
-                        <a class="btn btn-danger" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?>">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>
@@ -122,8 +130,28 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form  ng-controller="ctrlCategory" name="formCategory">
+                    <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/addEmployee" method="post" >
                         <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Tài khoản
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" name="tennv" ng-model="" placeholder="Nhập tài khoản" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mật khẩu
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" name="tennv" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-5 text-center">
                                     <label>
@@ -131,7 +159,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="tennv" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -141,7 +169,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text"  name="sdtnv" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -151,7 +179,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeEmailInsert" name="" ng-model="" placeholder="Nhập email nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text"  name="eamilnv" ng-model="" placeholder="Nhập email nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -159,19 +187,19 @@
                                     <label for="exampleFormControlSelect1">Chức vụ</label>
                                 </div>
                                 <div class="col-md-7">
-                                    <select class="form-control" id="txtEmployeePositionInsert">
-                                        <option>Nhân viên</option>
-                                        <option>Lễ tân</option>
+                                    <select class="form-control" name = "cvnv">
+                                        <option value ="Nhân viên" >Nhân viên</option>
+                                        <option value ="Lễ tân">Lễ tân</option>
                                     </select>                                   
                                 </div>                                                           
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Lưu">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                        </div>
                     </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
+                
                 </div>
             </div>
         </div>

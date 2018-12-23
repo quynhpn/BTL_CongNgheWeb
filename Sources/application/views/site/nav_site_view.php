@@ -6,10 +6,9 @@
       <button class="btn btn-dark my-2 my-sm-0" type="submit">
         <i class="fa fa-search"></i>
       </button>
+       <a href="<?php echo base_url();?>/index.php/login/index"><i class="fa fa-cog"style="color:white;padding-left:100px;"></i></a>
     </form>
-    <form>
-      <a href="<?php echo base_url();?>/index.php/login/index"><i class="fa fa-cog"style="color:white;"></i></a>
-    </form>
+
     </nav>
   </div>
 </div>
