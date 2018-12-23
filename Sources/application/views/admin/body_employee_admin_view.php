@@ -50,6 +50,12 @@
                         STT
                     </th>
                     <th>
+                        Tài khoản
+                    </th>
+                    <th>
+                        Mật khẩu
+                    </th>
+                    <th>
                         Mã nhân viên
                     </th>
                     <th>
@@ -74,6 +80,8 @@
             ?>   
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
+                    <td></td>
+                    <td></td>
                     <td><?php echo $row['MaNV']?></td>
                     <td><?php echo $row['TenNV']?></td>
                     <td><?php echo $row['SDTNV']?></td>
