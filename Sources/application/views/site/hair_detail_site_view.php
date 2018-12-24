@@ -8,7 +8,7 @@
   include_once "header_site_view.php";
 ?>
 <?php 
-  include "body_hair_detail_SIDE_PART_site_view.php";
+  include "body_hair_detail_site_view.php";
 ?>
 
 <?php
