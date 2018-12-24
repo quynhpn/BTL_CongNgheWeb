@@ -19,6 +19,10 @@ class M_service extends CI_Model{
     public function deleteByID($id){
       $this->db->query("UPDATE `dichvu` SET `HoatDong`=0 WHERE  MaDV='$id';");
     }
+    public function Detail($MaDV){
+      $query=$this->db->query("SELECT * FROM ChiTietDV where MaDV = '$MaDV';");
+      return $query->result_array();
+  }
 }
 
 ?>

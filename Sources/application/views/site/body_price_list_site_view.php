@@ -1,3 +1,16 @@
+<?php 
+  // foreach ($Price as $row) {
+  //    print_r($row);
+  //    echo "<br>";
+  //   $PriceDetail = $this->M_pricelist->priceDetail($row['MaDV']);
+  //    foreach ($PriceDetail as $item) {
+  //      print_r($item);
+  //      echo "<br>";
+  //    }
+  //    echo "<br>";
+  // }
+?>
+
 <div class="container">
   <div class="row">
     <ol class="breadcrumb bg-white">
@@ -25,16 +38,15 @@
           </div>
           <div class="col-md-12 mt-2">
           <?php 
-          foreach ($PriceDetail as $row2) {?>
-            <strong><?php echo $row2['Buoc']; ?></strong><?php echo $row2['Chitietbuoc']; ?><br>
-            
-          <?php
-          }
-          ?>
-            
+              $PriceDetail = $this->M_service->Detail($row['MaDV']);
+              foreach ($PriceDetail as $item) { ?>
+            <strong><?php echo $item['Buoc'];?> - </strong> <?php echo $item['Chitietbuoc'];?><br>
+          <?php } ?>
           </div>
     <?php } ?>
   </div>
+  
+  
   <div class="row mt-4">
           <div class="col-md-12">
             <p><strong><i>CHÚC CÁC BẠN CÓ NHỮNG GIÂY PHÚT THƯ GIÃN VÀ ĐẸP TRAI SAU KHI CẮT TÓC TẠI BARBER SHOP !</i></strong></p>
