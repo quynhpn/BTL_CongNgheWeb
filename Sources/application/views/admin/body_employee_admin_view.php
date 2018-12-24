@@ -86,7 +86,7 @@
                     <td><?php echo $row['TenNV']?></td>
                     <td><?php echo $row['SDTNV']?></td>
                     <td><?php echo $row['Email']?></td>     
-                    <td><?php echo $row['MaCV']?></td>                   
+                    <td><?php echo $row['ChucVu']?></td>                   
                     <td>
                         <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
                             <i class="fa fa-edit">
