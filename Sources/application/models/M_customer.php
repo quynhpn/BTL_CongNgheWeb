@@ -5,7 +5,7 @@ class M_customer extends CI_Model{
     }
 
     public function listCustomer(){
-      $query=$this->db->query("SELECT * FROM khachhang");
+      $query=$this->db->query("SELECT * FROM khachhang;");
       return $query->result_array();
     }
     public function countAll(){
@@ -16,6 +16,9 @@ class M_customer extends CI_Model{
         $start=isset($start) ? $start : 0;
         $query=$this->db->query("SELECT * FROM khachhang limit $start , $size;");
         return $query->result_array(); 
+    }
+    public function addCustomer($SDTKH,$TenKH,$DiaChi){
+        $query=$this->db->query("INSERT INTO `khachhang`(`SDTKH`, `TenKH`, `DiaChi`) VALUES ('$SDTKH','$TenKH','$DiaChi');");
     }
 
 

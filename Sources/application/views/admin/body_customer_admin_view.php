@@ -107,26 +107,27 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form  ng-controller="ctrlCategory" name="formCategory">
+                    <form  ng-controller="ctrlCustomer" name="formCustomer"action="<?php echo base_url();?>index.php/customer/pro_add_Customer" method="post">
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Tên khách hàng
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
                                 <div class="col-md-5 text-center">
                                     <label>
                                         Số điện thoại
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="sdtkh" ng-model="" class="form-control" />                                   
+                                </div>
+                            </div>
+                            <div class="row  mt-3">
+                                <div class="col-md-5 text-center">
+                                
+                                    <label>
+                                        Tên khách hàng
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" name="tenkh" ng-model="" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -136,16 +137,16 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeEmailInsert" name="" ng-model="" placeholder="Nhập email khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="diachikh" ng-model="" class="form-control" />                                   
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Lưu">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                        </div>
+                        <p><?php echo validation_errors(); ?></p>
                     </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
                 </div>
             </div>
         </div>

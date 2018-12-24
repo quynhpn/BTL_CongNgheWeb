@@ -80,8 +80,8 @@
             ?>   
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $row['TenDN']?></td>
+                    <td><?php echo $row['MatKhau']?></td>
                     <td><?php echo $row['MaNV']?></td>
                     <td><?php echo $row['TenNV']?></td>
                     <td><?php echo $row['SDTNV']?></td>
@@ -130,7 +130,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/addEmployee" method="post" >
+                    <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/pro_add_Employee" method="post" >
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-5 text-center">
@@ -139,7 +139,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="tennv" ng-model="" placeholder="Nhập tài khoản" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="tknv" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -149,17 +149,27 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="tennv" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="mknv"  class="form-control"  />                                   
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mã nhân viên
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" name="manv" class="form-control" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col-md-5 text-center">
                                     <label>
                                         Tên nhân viên
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="tennv" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="tennv" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -169,7 +179,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text"  name="sdtnv" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text"  name="sdtnv" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -179,12 +189,12 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text"  name="eamilnv" ng-model="" placeholder="Nhập email nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text"  name="emailnv"class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-5 text-center">
-                                    <label for="exampleFormControlSelect1">Chức vụ</label>
+                                    <label for="exampleFormControlSelect1" name="cvnv">Chức vụ</label>
                                 </div>
                                 <div class="col-md-7">
                                     <select class="form-control" name = "cvnv">
@@ -198,6 +208,7 @@
                             <input class="btn btn-primary" type="submit" value="Lưu">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
                         </div>
+                        <p><?php echo validation_errors(); ?></p>
                     </form>
                 
                 </div>
@@ -224,7 +235,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập tên nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -234,7 +245,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -244,7 +255,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập số điện thoại nhân viên" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -271,3 +282,4 @@
     </div>
                 
                 
+             

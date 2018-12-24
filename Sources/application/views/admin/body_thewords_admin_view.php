@@ -62,17 +62,17 @@
             <tbody>  
             <?php
                 $stt=0; 
-                //foreach ($listWords as $row){
+                foreach ($listWords as $row){
                 $stt++;
             ?>       
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
-                    <td><?php //echo $row['MaDH']?></td>
-                    <td><?php //echo $row['TenKH']?></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $row['MaBV'];?></td>
+                    <td><?php echo $row['TenBV'];?></td>
+                    <td><?php echo $row['GioiThieuBV'];?></td>
+                    <td><?php echo $row['ChiTietBV'];?></td>
+                    <td><?php echo $row['link'];?></td>
+                    <td><?php echo $row['MaNV'];?></td>
                     <td>
                         <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
                             <i class="fa fa-edit"data-toggle="modal" data-target="#edit-modal">
@@ -89,7 +89,7 @@
                     </td>                        
                 </tr> 
                 <?php
-                //}
+                }
                 ?>           
             </tbody>
         </table> 

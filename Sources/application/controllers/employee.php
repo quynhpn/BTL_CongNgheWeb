@@ -22,7 +22,31 @@ class Employee extends CI_Controller {
       $this->M_employee->deleteByID($id);
       redirect(base_url()."index.php/employee/index");
     }  
-    public function addEmployee(){
-      print_r($_POST);
+    public function pro_add_Employee(){
+      //kiểm tra  bằng form validation
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('tknv', 'Tài khoản', 'required');
+      $this->form_validation->set_rules('mknv', 'Mật khẩu', 'required');
+      $this->form_validation->set_rules('manv', 'Mã nhân viên', 'required');
+      $this->form_validation->set_rules('tennv', 'Tên nhân viên', 'required');
+      $this->form_validation->set_rules('sdtnv', 'Số điện thoại', 'numeric|required');
+      $this->form_validation->set_rules('emailnv', 'Email', 'required|valid_email');
+      if($this->form_validation->run()==FALSE){
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
+        $this->getListEmployee();
+      } else {
+       $this->load->model("M_employee");
+       $TenDN = isset($_POST['tknv']) ? $_POST['tknv'] : "";
+       $MatKhau =isset($_POST['mknv']) ? $_POST['mknv'] : "";
+       $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
+       $TenNV = isset($_POST['tennv']) ? $_POST['tennv'] : "";
+       $SDTNV = isset($_POST['sdtnv']) ? $_POST['sdtnv'] : "";
+       $Email =isset($_POST['emailnv']) ? $_POST['emailnv'] : "";
+       $ChucVu =isset($_POST['cvnv']) ? $_POST['cvnv'] : "";
+       $this->M_employee->addEmployee($TenDN,$MatKhau,$MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
+       echo "<script>alert('Thành công');</script>";
+       $this->getListEmployee();
+      }
+      
     }
 }

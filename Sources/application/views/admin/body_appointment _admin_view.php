@@ -115,7 +115,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form  ng-controller="ctrlCategory" name="formCategory">
+                    <form  ng-controller="ctrlAppointment" name="formAppointment"action="<?php echo base_url();?>index.php/appointment/pro_add_Appointment" method="post">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-5 text-center">
@@ -124,7 +124,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text"name="tkh" ng-model="" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -134,7 +134,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="sdtkh" ng-model=""class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -144,7 +144,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập giờ hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="giohen" ng-model="" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -154,16 +154,16 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập ngày hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="ngayhen" ng-model=""class="form-control" />                                   
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Lưu">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                        </div>
+                        <p><?php echo validation_errors(); ?></p>
                     </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
                 </div>
             </div>
         </div>

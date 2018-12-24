@@ -17,4 +17,23 @@ class Customer extends CI_Controller {
       $data['listCustomer'] = $this->M_customer->getList($start,$config['per_page']);
       $this->load->view('admin/customer_admin_view.php',$data);
     }
+    public function pro_add_Customer(){
+      //kiểm tra  bằng form validation
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('sdtkh', 'Số điện thoại', 'numeric|required');
+      $this->form_validation->set_rules('tenkh', 'Tên khách hàng', 'required');
+      $this->form_validation->set_rules('diachikh', 'Địa chỉ', 'required');
+      if($this->form_validation->run()==FALSE){
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
+        $this->getListCustomer();
+      } else {
+       $this->load->model("M_customer");
+       $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
+       $TenKH = isset($_POST['tenkh']) ? $_POST['tenkh'] : "";
+       $DiaChi = isset($_POST['diachikh']) ? $_POST['diachikh'] : "";
+       $this->M_customer->addCustomer($SDTKH, $TenKH,$DiaChi);
+       echo "<script>alert('Thành công');</script>";
+       $this->getlistCustomer();
+      }
+    }
 }
