@@ -142,7 +142,7 @@
                                     <input type="text" name="tennv" ng-model="" placeholder="Nhập tài khoản" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-md-5 text-center">
                                     <label>
                                         Mật khẩu

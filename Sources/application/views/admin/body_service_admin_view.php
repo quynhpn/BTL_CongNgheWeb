@@ -139,8 +139,7 @@
             </div>
         </div>
  </div>
-
-        <div class="modal" tabindex="-1" role="dialog" id="add-modal">
+      <div class="modal" tabindex="-1" role="dialog" id="add-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -151,14 +150,24 @@
                     </div>
                     <form  ng-controller="ctrlCategory" name="formCategory">
                         <div class="modal-body">
-                            <div class="row">
+                             <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mã dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col-md-5 text-center">
                                     <label>
                                         Tên dịch vụ
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên dịch vụ" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -168,7 +177,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập giá dịch vụ" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                         </div>
@@ -197,11 +206,21 @@
                             <div class="row">
                                 <div class="col-md-5 text-center">
                                     <label>
+                                        Mã dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
                                         Tên dịch vụ
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập tên dịch vụ" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -211,7 +230,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="" name="" ng-model="" placeholder="Nhập giá dịch vụ" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                                 </div>
                             </div>
                         </div>
