@@ -20,9 +20,9 @@ class M_appointment extends CI_Model{
     public function deleteByID($id){
         $this->db->query("DELETE FROM `lichhen` WHERE  lichhen.SDTKH='$id';");
     }
-    public function addAppointment($TenKH,$SDTKH,$GioHen, $NgayHen){
+    public function addAppointment($TenKH,$SDTKH,$GioHen, $NgayHen,$MaNV){
        $query=$this->db->query("INSERT INTO `khachhang`(`SDTKH`, `TenKH`) VALUES ('$SDTKH','$TenKH');");
-       $query=$this->db->query("INSERT INTO `lichhen`(`GioHen`, `NgayHen`, `SDTKH`) VALUES ('$GioHen','$NgayHen','$SDTKH');");
+       $query=$this->db->query("INSERT INTO `lichhen`(`GioHen`, `NgayHen`, `SDTKH`,`MaNV`) VALUES ('$GioHen', '$NgayHen', '$SDTKH','$MaNV');");
     }
 }
 ?>

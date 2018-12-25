@@ -38,9 +38,6 @@
                         STT
                     </th>
                     <th>
-                        Mã bài viết
-                    </th>
-                    <th>
                         Tên bài viết 
                     </th>
                     <th>
@@ -67,7 +64,6 @@
             ?>       
                 <tr class="table-warning">
                     <td><?php echo $stt?></td>
-                    <td><?php echo $row['MaBV'];?></td>
                     <td><?php echo $row['TenBV'];?></td>
                     <td><?php echo $row['GioiThieuBV'];?></td>
                     <td><?php echo $row['ChiTietBV'];?></td>
@@ -81,7 +77,7 @@
                         </button>
                     </td>
                     <td>
-                        <a class="btn btn-danger">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/thewords/delete/" . $row['MaBV'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>
@@ -115,18 +111,9 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form  ng-controller="ctrlCategory" name="formCategory">
+                    <form  ng-controller="ctrlThewords" name="formThewords"action="<?php echo base_url();?>index.php/thewords/pro_add_TheWords" method="post">
                         <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Mã bài viết
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
+                            
                             <div class="row mt-3">
                                 <div class="col-md-5 text-center">
                                     <label>
@@ -134,7 +121,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" class="form-control"  name="tenbv"/>                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -144,7 +131,9 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model=""class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <textarea rows="4" cols="23" class=" form-control" name="gioithieubv">
+
+                                    </textarea>                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -154,7 +143,9 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeEmailInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <textarea rows="10" cols="23"class=" form-control" name="chitietbv">
+
+                                    </textarea>                                    
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -164,22 +155,33 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeEmailInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                    <input type="text" name="link"class="form-control"/>                                   
                                 </div>
                             </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mã nhân viên
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" name="manv"class="form-control"/>                                   
+                                </div>
+                            </div>
+                            
                         </div>
+                         <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Lưu">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                        </div>
+                        <p><?php echo validation_errors(); ?></p>
                     </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
                 </div>
             </div>
         </div>
     </div>    
 
-<div >
+<div>
         <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -251,4 +253,4 @@
                 </div>
             </div>
         </div>
-    </div>    
+</div>    

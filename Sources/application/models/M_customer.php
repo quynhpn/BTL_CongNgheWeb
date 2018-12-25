@@ -20,6 +20,10 @@ class M_customer extends CI_Model{
     public function addCustomer($SDTKH,$TenKH,$DiaChi){
         $query=$this->db->query("INSERT INTO `khachhang`(`SDTKH`, `TenKH`, `DiaChi`) VALUES ('$SDTKH','$TenKH','$DiaChi');");
     }
+    public function getByID($MaNV){
+        $query=$this->db->query("SELECT * FROM `chitietdv` WHERE MaDV='$MaNV';");
+        return $query->result_array();
+    }
 
 
 }

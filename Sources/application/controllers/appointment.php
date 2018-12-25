@@ -15,6 +15,7 @@ class Appointment extends CI_Controller {
       $start = $this->uri->segment(3);
        $this->load->library('pagination',$config);
       $data['listAppointment'] = $this->M_appointment->getList($start,$config['per_page']);
+      $data['listAllCustomer'] = $this->M_appointment->getList(0,$config['total_rows']);
       $this->load->view('admin/appointment_admin_view.php',$data);
     }    
     public function delete($id){
@@ -31,17 +32,19 @@ class Appointment extends CI_Controller {
       $this->form_validation->set_rules('giohen', 'Giờ hẹn', 'required');
       $this->form_validation->set_rules('ngayhen', 'Ngày hẹn', 'required');
       if($this->form_validation->run()==FALSE){
-        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
         $this->getListAppointment();
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
       } else {
        $this->load->model("M_appointment");
-       $TenKH = isset($_POST['tknv']) ? $_POST['tknv'] : "";
-       $SDTKH =isset($_POST['mknv']) ? $_POST['mknv'] : "";
-       $GioHen = isset($_POST['manv']) ? $_POST['manv'] : "";
-       $NgayHen = isset($_POST['tennv']) ? $_POST['tennv'] : "";
-       $this->M_appointment->addAppointment($TenKH,$SDTKH,$GioHen, $NgayHen);
-       echo "<script>alert('Thành công');</script>";
+       $TenKH = isset($_POST['tkh']) ? $_POST['tkh'] : "";
+       $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
+       $GioHen = isset($_POST['giohen']) ? $_POST['giohen'] : "";
+       $NgayHen = isset($_POST['ngayhen']) ? $_POST['ngayhen'] : "";
+       $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
+        //print_r($_POST);
+       $this->M_appointment->addAppointment($TenKH,$SDTKH,$GioHen, $NgayHen,$MaNV);
        $this->getListAppointment();
+       echo "<script>alert('Thành công');</script>";
       }
       
     }

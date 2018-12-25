@@ -21,6 +21,12 @@ class M_thewords extends CI_Model{
     $query=$this->db->query("SELECT * FROM `baiviet` ORDER BY RAND() limit 0, 3");
     return $query->result_array();
   }
+  public function addTheWords($TenBV, $GioiThieuBV, $ChiTietBV, $link, $MaNV){
+    $query= $this->db->query("INSERT INTO `baiviet`(`TenBV`, `GioiThieuBV`, `ChiTietBV`, `link`, `MaNV`) VALUES ('$TenBV', '$GioiThieuBV', '$ChiTietBV', '$link', '$MaNV');");
+    }
+  public function deleteByID($id){
+      $this->db->query("DELETE FROM `baiviet` WHERE MaBV='$id';");
+    }
 }
 
 ?>

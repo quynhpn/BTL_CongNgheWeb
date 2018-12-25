@@ -95,7 +95,7 @@
                         </button>
                     </td>
                     <td>
-                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?>">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?> onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/employee/delete/" . $row['MaNV'];?>">
                            <i class="fa fa-trash">
                                 Xóa
                             </i>

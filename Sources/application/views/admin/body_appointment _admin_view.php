@@ -57,6 +57,9 @@
                     <th>
                         Ngày hẹn
                     </th>
+                    <th>
+                        Nhân viên
+                    </th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -74,6 +77,7 @@
                     <td><?php echo $row['SDTKH']?></td>
                     <td><?php echo $row['GioHen']?></td>
                     <td><?php echo $row['NgayHen']?></td>
+                    <td><?php echo $row['MaNV']?></td>
                     <td>
                         <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
                             <i class="fa fa-edit">
@@ -144,7 +148,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="giohen" ng-model="" class="form-control" />                                   
+                                    <input type="time" name="giohen" ng-model="" class="form-control" />                                   
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -154,7 +158,27 @@
                                     </label>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" name="ngayhen" ng-model=""class="form-control" />                                   
+                                    <input type="date" name="ngayhen" ng-model=""class="form-control" />                                   
+                                </div>
+                            </div>
+                             <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Nhân viên
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <select name="manv" id="">
+                                        
+                                            <?php 
+                                                foreach ($listAllCustomer as $row) {?>
+                                                <option value="<?php echo $row['MaNV'];?>">
+                                                        <?php echo $row['MaNV'];?>
+                                                </option>
+                                                <?php }?>
+                                            
+                                        
+                                    </select>                                   
                                 </div>
                             </div>
                         </div>
