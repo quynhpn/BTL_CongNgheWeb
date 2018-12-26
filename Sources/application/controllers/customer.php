@@ -36,4 +36,11 @@ class Customer extends CI_Controller {
        $this->getlistCustomer();
       }
     }
+    public function add_customer(){
+      $this->load->view("admin/add_customer_admin_view.php");
+
+    }
+    public function edit_customer(){
+      $this->load->view("admin/edit_customer_admin_view.php");
+    }
 }

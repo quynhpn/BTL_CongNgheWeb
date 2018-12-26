@@ -25,10 +25,10 @@
                     </button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-info col-md-2 offset-md-9"data-toggle="modal" data-target="#add-modal">
+                    <a class="btn btn-info col-md-2 offset-md-9"href="<?php echo base_url() . "index.php/thewords/add_theword"; ?>">
                         <i class="fa fa-user-plus"></i>
                         Thêm mới
-                    </button>
+                    </a>
                 </div>
                 <div class="row">
                      <table class="table table-bordered table-hover mt-3">
@@ -70,11 +70,11 @@
                     <td><?php echo $row['link'];?></td>
                     <td><?php echo $row['MaNV'];?></td>
                     <td>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
-                            <i class="fa fa-edit"data-toggle="modal" data-target="#edit-modal">
+                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/thewords/add_theword"; ?>">
+                            <i class="fa fa-edit">
                                 Sửa
                             </i>
-                        </button>
+                        </a>
                     </td>
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/thewords/delete/" . $row['MaBV'];?>">
@@ -101,85 +101,7 @@
         </div>
     </div>
 
-<div >
-        <div class="modal" tabindex="-1" role="dialog" id="add-modal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Thêm Bài Viết</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form  ng-controller="ctrlThewords" name="formThewords"action="<?php echo base_url();?>index.php/thewords/pro_add_TheWords" method="post">
-                        <div class="modal-body">
-                            
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Tên bài viết
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" class="form-control"  name="tenbv"/>                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Giới thiệu
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <textarea rows="4" cols="23" class=" form-control" name="gioithieubv">
-
-                                    </textarea>                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Chi tiết
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <textarea rows="10" cols="23"class=" form-control" name="chitietbv">
-
-                                    </textarea>                                    
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Link
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="link"class="form-control"/>                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Mã nhân viên
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="manv"class="form-control"/>                                   
-                                </div>
-                            </div>
-                            
-                        </div>
-                         <div class="modal-footer">
-                            <input class="btn btn-primary" type="submit" value="Lưu">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                        </div>
-                        <p><?php echo validation_errors(); ?></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>    
+   
 
 <div>
         <div class="modal" tabindex="-1" role="dialog" id="edit-modal">

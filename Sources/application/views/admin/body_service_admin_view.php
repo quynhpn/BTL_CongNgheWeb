@@ -64,11 +64,12 @@
                     <td><?php echo $row['TenDV']?></td>
                     <td><?php echo $row['Gia']?></td>
                     <td>
-                        <button class="btn btn-primary"data-toggle="modal" data-target="#detail-modal">
+                        <a class="btn btn-primary" href="<?php echo base_url() . "index.php/service/detail/" . $row['MaDV'];?>">
                             <i class="fa fa-edit">
                                 Chi tiết
                             </i>
-                        </button>
+                            <!-- data-toggle="modal" data-target="#detail-modal" -->
+                        </a>
                     </td>                      
                     <td>
                         <button class="btn btn-warning"data-toggle="modal" data-target="#edit-modal">
@@ -103,43 +104,8 @@
 </div>
 <div >
 
-<div class="modal" tabindex="-1" role="dialog" id="detail-modal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Chi Tiết Dịch Vụ</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="container"style="padding:30px;">
-                        <table class="table table-bordered table-hover" >
-                            <?php
-                                $stt=0; 
-                                //foreach ($listInvoiceDetail as $row2){
-                                $stt++;
-                            ?>  
-                            <tr>
-                                <th>Bước</th>
-                                <th>Chi tiết bước</th>
-                            </tr>
-                            <tr>
-                                <td><?php //echo $row2['TenDV']; ?></td>
-                                <td><?php //echo $row2['Gia']; ?></td>    
-                            </tr>
-                            <?php
-                           // }
-                            ?>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
-                </div>
-            </div>
-        </div>
- </div>
-      <div class="modal" tabindex="-1" role="dialog" id="add-modal">
+
+<div class="modal" tabindex="-1" role="dialog" id="add-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -189,9 +155,9 @@
                 </div>
             </div>
         </div>
- </div>
+</div>
 
-    <div >
+<div >
         <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -243,7 +209,42 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
 
-                
+<div class="modal" tabindex="-1" role="dialog" id="detail-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Chi Tiết Dịch Vụ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="container"style="padding:30px;">
+                        <table class="table table-bordered table-hover" >
+                            <?php
+                                $stt=0; 
+                                //foreach ($listInvoiceDetail as $row2){
+                                $stt++;
+                            ?>  
+                            <tr>
+                                <th>Bước</th>
+                                <th>Chi tiết bước</th>
+                            </tr>
+                            <tr>
+                                <td><?php //echo $row2['TenDV']; ?></td>
+                                <td><?php //echo $row2['Gia']; ?></td>    
+                            </tr>
+                            <?php
+                           // }
+                            ?>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>     
                 

@@ -22,6 +22,18 @@ class Employee extends CI_Controller {
       $this->M_employee->deleteByID($id);
       redirect(base_url()."index.php/employee/index");
     }  
+     public function add_employee(){
+      $this->load->model("M_employee");
+      $data['NV'] = $this->M_employee->listPositionALl();
+      $this->load->view("admin/add_employee_admin_view.php", $data);
+
+    }
+    public function edit_employee(){
+      $this->load->model("M_employee");
+      $data['NV'] = $this->M_employee->listPositionALl();
+      $this->load->view("admin/edit_employee_admin_view.php",$data);
+
+    }
     public function pro_add_Employee(){
       //kiểm tra  bằng form validation
       $this->load->library('form_validation');

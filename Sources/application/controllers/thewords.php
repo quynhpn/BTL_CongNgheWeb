@@ -38,5 +38,12 @@ class TheWords extends CI_Controller {
       $this->load->model("M_thewords");
       $this->M_thewords->deleteByID($id);
       redirect(base_url()."index.php/thewords/index");
-    }   
+    }  
+    public function add_theword(){
+      $this->load->view("admin/add_thewords_admin_view.php");
+
+    }
+    public function edit_theword(){
+      $this->load->view("admin/edit_thewords_admin_view.php");
+    } 
 }

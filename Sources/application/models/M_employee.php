@@ -3,6 +3,15 @@ class M_employee extends CI_Model{
   public function __construct(){
   parent::__construct();
 }
+public function listEmployeeALl(){
+    $query=$this->db->query("SELECT * FROM nhanvien");
+    return $query->result_array();
+  }
+  
+public function listPositionALl(){
+    $query=$this->db->query("SELECT ChucVu FROM `nhanvien` group by ChucVu");
+    return $query->result_array();
+  }
   public function listEmployee(){
     $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan WHERE nhanvien.MaNV=taikhoan.MaNV AND nhanvien.HoatDong <> 0;");
     return $query->result_array();

@@ -24,6 +24,19 @@ class Appointment extends CI_Controller {
       redirect(base_url()."index.php/appointment/index");
 
     }
+    public function add_appointment(){
+      $this->load->model("M_employee");
+      $data['NV'] = $this->M_employee->listEmployeeALL();
+      //print_r($data['NV']);
+      $this->load->view("admin/add_appointment_admin_view.php",$data);
+
+    }
+    public function edit_appointment(){
+      $this->load->model("M_employee");
+      $data['NV'] = $this->M_employee->listEmployeeALL();
+      $this->load->view("admin/edit_appointment_admin_view.php",$data);
+
+    }
     public function pro_add_Appointment(){
       //kiểm tra  bằng form validation
       $this->load->library('form_validation');
@@ -32,7 +45,7 @@ class Appointment extends CI_Controller {
       $this->form_validation->set_rules('giohen', 'Giờ hẹn', 'required');
       $this->form_validation->set_rules('ngayhen', 'Ngày hẹn', 'required');
       if($this->form_validation->run()==FALSE){
-        $this->getListAppointment();
+        $this->add_appointment();
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
       } else {
        $this->load->model("M_appointment");

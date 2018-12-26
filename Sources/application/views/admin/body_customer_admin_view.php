@@ -37,10 +37,10 @@
                     </button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-info col-md-2 offset-md-9" data-toggle="modal" data-target="#add-modal">
+                    <a class="btn btn-info col-md-2 offset-md-9" href="<?php echo base_url() . "index.php/customer/add_customer"; ?>">
                         <i class="fa fa-user-plus"></i>
                         Thêm mới
-                    </button>
+                    </a>
                 </div>
                 <div class="row">
                      <table class="table table-bordered table-hover mt-3">
@@ -73,11 +73,11 @@
                     <td><?php echo $row['TenKH']?></td>
                     <td><?php echo $row['DiaChi']?></td>                        
                     <td>
-                        <button class="btn btn-warning"data-toggle="modal" data-target="#edit-modal">
+                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/customer/edit_customer"; ?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>
-                        </button>
+                        </a>
                     </td>
                 </tr>    
                 <?php
@@ -97,60 +97,7 @@
     </div>
     </div>
 
-    <div >
-        <div class="modal" tabindex="-1" role="dialog" id="add-modal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Thêm Khách Hàng</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form  ng-controller="ctrlCustomer" name="formCustomer"action="<?php echo base_url();?>index.php/customer/pro_add_Customer" method="post">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Số điện thoại
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="sdtkh" ng-model="" class="form-control" />                                   
-                                </div>
-                            </div>
-                            <div class="row  mt-3">
-                                <div class="col-md-5 text-center">
-                                
-                                    <label>
-                                        Tên khách hàng
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="tenkh" ng-model="" class="form-control" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Địa chỉ
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="diachikh" ng-model="" class="form-control" />                                   
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input class="btn btn-primary" type="submit" value="Lưu">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                        </div>
-                        <p><?php echo validation_errors(); ?></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div >
         <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
