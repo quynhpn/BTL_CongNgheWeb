@@ -73,7 +73,7 @@
                     <td><?php echo $row['TenKH']?></td>
                     <td><?php echo $row['DiaChi']?></td>                        
                     <td>
-                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/customer/edit_customer"; ?>">
+                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/customer/edit_customer/". $row['SDTKH'];?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>

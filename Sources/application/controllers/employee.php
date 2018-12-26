@@ -33,7 +33,7 @@ class Employee extends CI_Controller {
       $data['Employee'] = $this->M_employee->getByID($id);
       $data['NV'] = $this->M_employee->listPositionALl();
       $this->load->view("admin/edit_employee_admin_view.php",$data);
-      print_r($data['Employee']);
+      //print_r($data['Employee']);
 
     }
     public function pro_add_Employee(){

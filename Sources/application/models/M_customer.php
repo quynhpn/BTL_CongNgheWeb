@@ -24,6 +24,13 @@ class M_customer extends CI_Model{
         $query=$this->db->query("SELECT * FROM `chitietdv` WHERE MaDV='$MaNV';");
         return $query->result_array();
     }
+    public function getByIDKH($id){
+        $query=$this->db->query("SELECT * FROM `khachhang` WHERE `SDTKH`='$id';");
+        return $query->row_array();
+    }
+    public function editCustomer($id,$TenKH,$DiaChi){
+      $query=$this->query("UPDATE `khachhang` SET `TenKH`='$TenKH',`DiaChi`='$DiaChi' WHERE `SDTKH`='$id';");
+    }
 
 
 }

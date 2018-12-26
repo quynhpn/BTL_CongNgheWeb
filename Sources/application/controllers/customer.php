@@ -40,7 +40,29 @@ class Customer extends CI_Controller {
       $this->load->view("admin/add_customer_admin_view.php");
 
     }
-    public function edit_customer(){
-      $this->load->view("admin/edit_customer_admin_view.php");
+    public function edit_customer($id){
+      $this->load->model("M_customer");
+      $data['Customer'] = $this->M_customer->getByIDKH($id);
+      $this->load->view("admin/edit_customer_admin_view.php",$data);
+      //print_r($data['Customer']);
     }
+    public function pro_edit_Customer(){
+      //kiểm tra  bằng form validation
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('tenkh', 'Tên khách hàng', 'required');
+      $this->form_validation->set_rules('diachikh', 'Địa chỉ', 'required');
+      if($this->form_validation->run()==FALSE){
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
+        $this->edit_customer();
+      } else {
+       $this->load->model("M_customer");
+       $TenKH = isset($_POST['tenkh']) ? $_POST['tenkh'] : "";
+       $DiaChi = isset($_POST['diachikh']) ? $_POST['diachikh'] : "";
+       $this->M_customer->editCustomer($TenKH,$DiaChi);
+       echo "<script>alert('Thành công');</script>";
+       $this->getListCustomer();
+      }
+    }
+
+
 }
