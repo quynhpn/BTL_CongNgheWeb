@@ -88,7 +88,7 @@
                     <td><?php echo $row['Email']?></td>     
                     <td><?php echo $row['ChucVu']?></td>                   
                     <td>
-                        <a class="btn btn-warning"href="<?php echo base_url() . "index.php/employee/edit_employee"; ?>">
+                        <a class="btn btn-warning"href="<?php echo base_url() . "index.php/employee/edit_employee/". $row['MaNV'];?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>

@@ -14,7 +14,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="tknv" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                        <input type="text" name="tknv" class="form-control"placeholder="<?php echo $Employee['TenDN'];?>" readonly/>                                   
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -24,7 +24,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="mknv"  class="form-control"  />                                   
+                        <input type="text" name="mknv"  class="form-control"placeholder="<?php echo $Employee['MatKhau'];?>" readonly/>                                   
                     </div>                    
                 </div>
                 <div class="row mt-3">
@@ -34,7 +34,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="manv" class="form-control" />                                   
+                        <input type="text" name="manv" class="form-control"placeholder="<?php echo $Employee['MaNV'];?>" />                                   
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -44,7 +44,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="tennv" class="form-control" />                                   
+                        <input type="text" name="tennv" class="form-control"placeholder="<?php echo $Employee['TenNV'];?>"/>                                   
                     </div>
                 </div>            
                 <div class="row mt-3">
@@ -54,7 +54,7 @@
                          </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text"  name="sdtnv" class="form-control" />                                   
+                        <input type="text"  name="sdtnv" class="form-control"placeholder="<?php echo $Employee['SDTNV'];?>" />                                   
                     </div>
                 </div>
                  <div class="row mt-3">
@@ -64,7 +64,7 @@
                          </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text"  name="emailnv"class="form-control" />                                   
+                        <input type="text"  name="emailnv"class="form-control"placeholder="<?php echo $Employee['Email'];?>" />                                   
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -75,9 +75,9 @@
                         <select name="cvnv" id=""class="form-control">
                         <?php 
                             foreach ($NV as $row) {?>
-                            <option value="<?php echo $row['ChucVu'];?>">
+                            <option value="<?php echo $row['ChucVu'];?>" <?php if($row['ChucVu'] === $Employee['ChucVu']) echo "selected"; ?>>
                                 <?php echo $row['ChucVu'];?>
-                            </option>
+                            </option >
                         <?php }?>
                         </select>
                     </div>                                                             

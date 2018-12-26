@@ -33,6 +33,15 @@ public function listPositionALl(){
       $query=$this->db->query("INSERT INTO nhanvien(`MaNV`, `TenNV`, `SDTNV`, `Email`, `ChucVu`, `HoatDong`) VALUES ('$MaNV', '$TenNV', '$SDTNV', '$Email', '$ChucVu', 1);");
        $query=$this->db->query("INSERT INTO `taikhoan`(`TenDN`, `MatKhau`, `MaNV`) VALUES ('$TenDN','$MK','$MaNV');");
     }
+    
+    public function getByID($id){
+        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV = taikhoan.MaNV WHERE nhanvien.MaNV = '$id';");
+        return $query->row_array();
+    }
+    public function editEmployee($id,$TenNV,$SDTNV,$Email,$ChucVu){
+      //$query=$this->query("UPDATE `taikhoan` SET`MatKhau`='$MatKhau' WHERE MaNV='$id';");
+      $query=$this->query("UPDATE `nhanvien` SET`TenNV`='$TenNV',`SDTNV`='$SDTNV',`Email`='$Email',`ChucVu`='$ChucVu' WHERE MaNV='$id';");
+    }
 }
 
 ?>

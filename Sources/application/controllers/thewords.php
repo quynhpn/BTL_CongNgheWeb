@@ -21,7 +21,7 @@ class TheWords extends CI_Controller {
       $this->form_validation->set_rules('link', 'Link', 'required');
       if($this->form_validation->run()==FALSE){
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
-        $this->getListTheWord();
+        $this->add_theword();
       } else {
        $this->load->model("M_thewords");
        $TenBV =isset($_POST['tenbv']) ? $_POST['tenbv'] : "";

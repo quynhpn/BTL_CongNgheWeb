@@ -25,7 +25,7 @@ class Customer extends CI_Controller {
       $this->form_validation->set_rules('diachikh', 'Địa chỉ', 'required');
       if($this->form_validation->run()==FALSE){
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
-        $this->getListCustomer();
+        $this->add_customer();
       } else {
        $this->load->model("M_customer");
        $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
