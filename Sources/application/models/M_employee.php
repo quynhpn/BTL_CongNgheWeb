@@ -40,7 +40,7 @@ public function listPositionALl(){
     }
     public function editEmployee($id,$TenNV,$SDTNV,$Email,$ChucVu){
       //$query=$this->query("UPDATE `taikhoan` SET`MatKhau`='$MatKhau' WHERE MaNV='$id';");
-      $query=$this->query("UPDATE `nhanvien` SET`TenNV`='$TenNV',`SDTNV`='$SDTNV',`Email`='$Email',`ChucVu`='$ChucVu' WHERE MaNV='$id';");
+      $this->db->query("UPDATE `nhanvien` SET`TenNV`='$TenNV',`SDTNV`='$SDTNV',`Email`='$Email',`ChucVu`='$ChucVu' WHERE MaNV='$id';");
     }
 }
 

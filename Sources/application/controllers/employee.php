@@ -62,7 +62,7 @@ class Employee extends CI_Controller {
        $this->getListEmployee();
       }
     }
-    public function pro_edit_Employee(){
+    public function pro_edit_Employee($id){
       //kiểm tra  bằng form validation
       $this->load->library('form_validation');
       $this->form_validation->set_rules('manv', 'Mã nhân viên', 'required');
@@ -71,7 +71,7 @@ class Employee extends CI_Controller {
       $this->form_validation->set_rules('emailnv', 'Email', 'required|valid_email');
       if($this->form_validation->run()==FALSE){
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
-        $this->edit_employee();
+        $this->edit_employee($id);
       } else {
        $this->load->model("M_employee");
        $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
@@ -81,7 +81,7 @@ class Employee extends CI_Controller {
        $ChucVu =isset($_POST['cvnv']) ? $_POST['cvnv'] : "";
        $this->M_employee->editEmployee($MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
        echo "<script>alert('Thành công');</script>";
-       $this->getListEmployee();
+       redirect(base_url() . "index.php/employee/getListEmployee");
       }
     }
 }

@@ -5,7 +5,7 @@
         </div>
     </div>
     <div>
-        <form  ng-controller="ctrlEmployee" name="formEmployee" method="post" >
+        <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/pro_edit_Employee/<?php echo $Employee['MaNV'];?>" method="post" >
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5 text-center">
@@ -14,7 +14,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="tknv" class="form-control"placeholder="<?php echo $Employee['TenDN'];?>" readonly/>                                   
+                        <input type="text" name="tknv" class="form-control"value="<?php echo $Employee['TenDN'];?>" readonly/>                                   
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -24,7 +24,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="mknv"  class="form-control"placeholder="<?php echo $Employee['MatKhau'];?>" readonly/>                                   
+                        <input type="text" name="mknv"  class="form-control"value="<?php echo $Employee['MatKhau'];?>" readonly/>                                   
                     </div>                    
                 </div>
                 <div class="row mt-3">
@@ -34,7 +34,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="manv" class="form-control"placeholder="<?php echo $Employee['MaNV'];?>" />                                   
+                        <input type="text" name="manv" class="form-control"value="<?php echo $Employee['MaNV'];?>" />                                   
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -44,7 +44,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="tennv" class="form-control"placeholder="<?php echo $Employee['TenNV'];?>"/>                                   
+                        <input type="text" name="tennv" class="form-control"value="<?php echo $Employee['TenNV'];?>"/>                                   
                     </div>
                 </div>            
                 <div class="row mt-3">
@@ -54,7 +54,7 @@
                          </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text"  name="sdtnv" class="form-control"placeholder="<?php echo $Employee['SDTNV'];?>" />                                   
+                        <input type="text"  name="sdtnv" class="form-control"value="<?php echo $Employee['SDTNV'];?>" />                                   
                     </div>
                 </div>
                  <div class="row mt-3">
@@ -64,7 +64,7 @@
                          </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text"  name="emailnv"class="form-control"placeholder="<?php echo $Employee['Email'];?>" />                                   
+                        <input type="text"  name="emailnv"class="form-control" value="<?php echo $Employee['Email'];?>" />                                   
                     </div>
                 </div>
                 <div class="row mt-3">
