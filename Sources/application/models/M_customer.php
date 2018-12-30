@@ -29,9 +29,23 @@ class M_customer extends CI_Model{
         return $query->row_array();
     }
     public function editCustomer($id,$TenKH,$DiaChi){
-      $query=$this->query("UPDATE `khachhang` SET `TenKH`='$TenKH',`DiaChi`='$DiaChi' WHERE `SDTKH`='$id';");
+      $query=$this->db->query("UPDATE `khachhang` SET `TenKH`='$TenKH',`DiaChi`='$DiaChi' WHERE `SDTKH`='$id';");
     }
 
+    public function checkByIDKH($id){
+        $query=$this->db->query("SELECT * FROM `khachhang` WHERE `SDTKH`='$id';");
+        return $query->num_rows();
+    }
+    public function countAllS($s){
+        $query=$this->db->query("SELECT * FROM khachhang WHERE khachhang.TenKH like'%$s%' OR khachhang.SDTKH like'%$s%';");
+        return $query->num_rows();
+    }
+
+    public function getListS($start, $size, $s){
+        $start = isset($start)? $start : 0;
+        $query=$this->db->query("SELECT * FROM khachhang WHERE khachhang.TenKH like'%$s%' OR khachhang.SDTKH like'%$s%' limit $start , $size;");
+        return $query->result_array();
+    }
 
 }
 ?>

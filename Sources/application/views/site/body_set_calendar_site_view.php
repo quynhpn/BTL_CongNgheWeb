@@ -11,13 +11,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-3"></div>
-                <div class="col-md-4 col-lg-6" style="background:#b19a94;">
-                    <div class="steps-progressbar">
-                        <ul style="color:black;">
-                            <li class="previous" >Nhập SĐT</li>
-                            <li>Chọn ngày giờ</li>
-                        </ul>
-                    </div>
+                <div class="col-md-4 col-lg-6" style="background:#efdcbc">
+                    <div class="col-md-12 mt-3 mb-2">
+                        <h5><i class="fa fa-hand-o-right"></i>NHẬP SỐ ĐIỆN THOẠI CỦA BẠN</h5>
+                    </div> 
+                    <div class="col-md-12 mt-2 mb-3">
+                        <input type="text" class="form-control" placeholder="Nhập số điện thoại (Một số đặt cho 1 người)">
+                    </div> 
                 </div>
                 <div class="col-md-4 col-lg-3"></div>
             </div>
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-md-4 col-lg-3"></div>
-                <div class="col-md-4 col-lg-6" style="background:#d8d1c7;">
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
                     
                     <h3>CHỌN NGÀY/GIỜ CẮT</h3>
                 </div>
@@ -35,19 +35,30 @@
             </div>
             <div class="row">
                <div class="col-md-4 col-lg-3"></div>
-                <div class="col-md-4 col-lg-6" style="background:#e2e3e5;">
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
                      <div class="col-md-12 mt-2 text-center">
                       <button class="btn btn-dark btn-date">
                         <p>Hôm nay</p>
-                        <p>Chủ nhật, 02/12</p>
+                        <p><?php echo date("d-m-Y");?></p>
                       </button>
                       <button class="btn btn-dark btn-date">
                         <p>Ngày mai</p>
-                        <p>Thứ hai, 03/12</p>
+                        <p>
+                          <?php
+                           $d=strtotime("tomorrow");
+                           echo date("d-m-Y", $d) . "<br>";
+                          ?>
+                        </p>
                       </button>
                       <button class="btn btn-dark btn-date">
                         <p>Ngày kia</p>
-                        <p>Thứ ba , 04/12</p>
+                        <p>
+                          <?php
+                            $startdate = strtotime("tomorrow");
+                            $enddate = strtotime("+1 days", $startdate);
+                            echo date("d-m-Y", $enddate) . "<br>";
+                          ?>
+                        </p>
                       </button>
                      </div> 
                </div>
@@ -55,7 +66,7 @@
              
           <div class="row text-center">
             <div class="col-md-4 col-lg-3"></div>
-                <div class="col-md-4 col-lg-6 mb-4" style="background:#e2e3e5;">
+                <div class="col-md-4 col-lg-6 mb-4" style="background:#fef9dc;">
                      <div class="col-md-12 mt-2">
             <button class="btn btn-outline-success" time-frame="09:00">
               <div class="time">09:00</div>
@@ -171,10 +182,10 @@
             </button>
           </div>  
           <div class="col-md-12 mt-4 text-center mb-3">
-             <button class="btn btn-dark btn_cal " style="font-size: 40px;">
+             <a type="type" class="btn btn-dark btn_cal " style="font-size: 40px;" href="#">
                <i class="fa fa-calendar"></i>
                ĐẶT LỊCH GIỮ CHỖ
-             </button>
+             </a>
           </div>  
                </div>
                 <div class="col-md-4 col-lg-3"></div>

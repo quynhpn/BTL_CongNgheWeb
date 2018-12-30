@@ -5,7 +5,7 @@
     </div>
   </div>
   <div>
-  <form  ng-controller="ctrlThewords" name="formThewords" method="post">
+  <form  ng-controller="ctrlThewords" name="formThewords" action="<?php echo base_url();?>index.php/thewords/pro_edit_TheWords/<?php echo $Theword['MaBV'];?>" method="post">
     <div class="modal-body">
       <div class="row mt-3">
         <div class="col-md-5 text-center">
@@ -14,7 +14,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <input type="text" class="form-control"  name="tenbv"/>                                   
+          <input type="text" class="form-control"  name="tenbv" value="<?php echo $Theword['TenBV'];?>"/>                                   
         </div>
       </div>
       <div class="row mt-3">
@@ -24,7 +24,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <textarea rows="4" cols="23" class=" form-control" name="gioithieubv">
+          <textarea rows="4" cols="23" class=" form-control" name="gioithieubv"value="<?php echo $Theword['GioiThieuBV'];?>"/>
           </textarea>                                   
         </div>
       </div>
@@ -35,7 +35,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <textarea rows="10" cols="23"class=" form-control" name="chitietbv">
+          <textarea rows="10" cols="23"class=" form-control" name="chitietbv"value="<?php echo $Theword['ChiTietBV'];?>"/>
           </textarea>                                    
         </div>
       </div>
@@ -46,7 +46,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <input type="text" name="link"class="form-control"/>                                   
+          <input type="text" name="link"class="form-control" value="<?php echo $Theword['link'];?>"/>                                   
         </div>
       </div>
       <div class="row mt-3">
@@ -56,7 +56,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <input type="text" name="manv"class="form-control"/>                                   
+          <input type="text" name="manv"class="form-control" value="<?php echo $Theword['MaNV'];?>"/>                                   
         </div>
       </div>
     </div>

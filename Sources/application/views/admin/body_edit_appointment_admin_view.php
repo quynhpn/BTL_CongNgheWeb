@@ -5,18 +5,8 @@
     </div>
   </div>
   <div>
-    <form  ng-controller="ctrlAppointment" name="formAppointment" method="post">
+    <form  ng-controller="ctrlAppointment" name="formAppointment" action="<?php echo base_url();?>index.php/appointment/pro_edit_Appointment/<?php echo $Appointment['SDTKH'];?>" method="post" >
           <div class="modal-body">
-            <div class="row">
-              <div class="col-md-5 text-center">
-                <label>
-                  Tên khách hàng
-                </label>
-              </div>
-              <div class="col-md-5">
-                <input type="text"name="tkh" ng-model="" class="form-control" />                                   
-              </div>
-            </div>
             <div class="row mt-3">
               <div class="col-md-5 text-center">
                 <label>
@@ -24,7 +14,7 @@
                 </label>
               </div>
               <div class="col-md-5">
-                <input type="text" name="sdtkh" ng-model=""class="form-control" />                                   
+                <input type="text" name="sdtkh" ng-model=""class="form-control" value="<?php echo $Appointment['SDTKH'];?>" readonly/>                                   
               </div>
             </div>
             <div class="row mt-3">
@@ -34,7 +24,7 @@
                 </label>
               </div>
               <div class="col-md-5">
-                <input type="time" name="giohen" ng-model="" class="form-control" />                                   
+                <input type="time" name="giohen" ng-model="" class="form-control" value="<?php echo $Appointment['GioHen'];?>"/>                                  
               </div>
             </div>
             <div class="row mt-3">
@@ -44,24 +34,7 @@
                 </label>
               </div>
               <div class="col-md-5">
-                <input type="date" name="ngayhen" ng-model=""class="form-control" />                                   
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-5 text-center">
-                <label>
-                  Nhân viên
-                </label>
-              </div>
-              <div class="col-md-2">
-                <select name="manv" id="" class="form-control">
-                  <?php 
-                    foreach ($NV as $row) {?>
-                      <option value="<?php echo $row['MaNV'];?>">
-                        <?php echo $row['MaNV'];?>
-                      </option>
-                  <?php }?>
-                </select>                                  
+                <input type="date" name="ngayhen" ng-model=""class="form-control"value="<?php echo $Appointment['NgayHen'];?>"/>                                 
               </div>
             </div>
           </div>

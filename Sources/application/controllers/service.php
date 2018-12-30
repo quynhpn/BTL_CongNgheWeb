@@ -3,6 +3,10 @@ if (!defined('BASEPATH'))
 exit('No direct script access allowed');
  
 class Service extends CI_Controller {
+    public function __construct(){
+      parent::__construct();
+      $this->load->library("session");
+    }
 
   //private $data;
 
@@ -41,6 +45,27 @@ class Service extends CI_Controller {
       //$this->color = "Blue";
       echo Service::$stt;
       //$this->load->view('admin/service_admin_view.php',$data);
+    }
+    public function getListServiceS(){
+      if(isset($_POST['search']))
+      {
+        $s = $_POST['search'];
+        $this->session->set_userdata('search',$s);
+      }
+      else 
+      {
+        $s=$this->session->userdata('search');  
+      }
+        $s=trim(htmlspecialchars(addslashes($s)));
+        $this->load->model("M_service");
+        $config['total_rows'] = $this->M_service->countAllS($s);
+        $config['base_url'] = base_url()."index.php/service/getListServiceS";
+        $config["per_page"]=5;
+        $start = $this->uri->segment(3);
+        $this->load->library('pagination',$config);
+        $data['listService'] = $this->M_service->getListS($start,$config['per_page'],$s);
+        $this->load->view('admin/service_admin_view.php',$data);
+        //print_r ($s);
     }
 
 }

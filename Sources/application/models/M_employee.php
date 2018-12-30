@@ -13,16 +13,16 @@ public function listPositionALl(){
     return $query->result_array();
   }
   public function listEmployee(){
-    $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan WHERE nhanvien.MaNV=taikhoan.MaNV AND nhanvien.HoatDong <> 0;");
+    $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0;");
     return $query->result_array();
   }
   public function countAll(){
-        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan WHERE nhanvien.MaNV=taikhoan.MaNV AND nhanvien.HoatDong <> 0;");
+        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0;");
         return $query->num_rows();
     }
     public function getList($start,$size){
         $start=isset($start) ? $start : 0;
-        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan WHERE nhanvien.MaNV=taikhoan.MaNV AND nhanvien.HoatDong <> 0 limit $start , $size;");
+        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0 limit $start , $size;");
         return $query->result_array(); 
     }
     public function deleteByID($id){
@@ -41,6 +41,16 @@ public function listPositionALl(){
     public function editEmployee($id,$TenNV,$SDTNV,$Email,$ChucVu){
       //$query=$this->query("UPDATE `taikhoan` SET`MatKhau`='$MatKhau' WHERE MaNV='$id';");
       $this->db->query("UPDATE `nhanvien` SET`TenNV`='$TenNV',`SDTNV`='$SDTNV',`Email`='$Email',`ChucVu`='$ChucVu' WHERE MaNV='$id';");
+    }
+    public function countAllS($s){
+        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0 AND nhanvien.TenNV like'%$s%' OR nhanvien.SDTNV like '%$s%' OR nhanvien.ChucVu like '%$s%';");
+        return $query->num_rows();
+    }
+
+    public function getListS($start, $size, $s){
+        $start = isset($start)? $start : 0;
+        $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0 AND nhanvien.TenNV like'%$s%' OR nhanvien.SDTNV like '%$s%' OR nhanvien.ChucVu like '%$s%' limit $start , $size;");
+        return $query->result_array();
     }
 }
 

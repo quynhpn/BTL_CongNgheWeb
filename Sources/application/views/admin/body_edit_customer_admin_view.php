@@ -5,7 +5,7 @@
     </div>
   </div>
   <div>
-    <form  ng-controller="ctrlCustomer" name="formCustomer"method="post">
+    <form  ng-controller="ctrlCustomer" name="formCustomer" action="<?php echo base_url();?>index.php/customer/pro_edit_Customer/<?php echo $Customer['SDTKH'];?>" method="post">
       <div class="modal-body">
         <div class="row">
           <div class="col-md-5 text-center">
@@ -24,7 +24,7 @@
             </label>
           </div>
           <div class="col-md-5">
-            <input type="text" name="tenkh" ng-model="" class="form-control"placeholder="<?php echo $Customer['TenKH'];?>"/>                                   
+            <input type="text" name="tenkh" ng-model="" class="form-control"value="<?php echo $Customer['TenKH'];?>"/>                                   
           </div>
         </div>
         <div class="row mt-3">
@@ -34,7 +34,7 @@
             </label>
           </div>
           <div class="col-md-5">
-            <input type="text" name="diachikh" ng-model="" class="form-control" placeholder="<?php echo $Customer['DiaChi'];?>"/>                                   
+            <input type="text" name="diachikh" ng-model="" class="form-control" value="<?php echo $Customer['DiaChi'];?>"/>                                   
           </div>
         </div>
       </div>

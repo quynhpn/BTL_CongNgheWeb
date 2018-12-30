@@ -3,6 +3,10 @@ if (!defined('BASEPATH'))
 exit('No direct script access allowed');
  
 class Employee extends CI_Controller {
+    public function __construct(){
+      parent::__construct();
+      $this->load->library("session");
+    }
     public function index()
     {
       $this->getListEmployee();
@@ -11,7 +15,7 @@ class Employee extends CI_Controller {
       $this->load->model("M_employee");
         $config['total_rows'] = $this->M_employee->countAll();
         $config['base_url'] = base_url()."index.php/employee/index";
-        $config["per_page"]=3;
+        $config["per_page"]=5;
       $start = $this->uri->segment(3);
        $this->load->library('pagination',$config);
       $data['listEmployee'] = $this->M_employee->getList($start,$config['per_page']);
@@ -51,13 +55,13 @@ class Employee extends CI_Controller {
       } else {
        $this->load->model("M_employee");
        $TenDN = isset($_POST['tknv']) ? $_POST['tknv'] : "";
-       $MatKhau =isset($_POST['mknv']) ? $_POST['mknv'] : "";
+       $MK =isset($_POST['mknv']) ? $_POST['mknv'] : "";
        $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
        $TenNV = isset($_POST['tennv']) ? $_POST['tennv'] : "";
        $SDTNV = isset($_POST['sdtnv']) ? $_POST['sdtnv'] : "";
        $Email =isset($_POST['emailnv']) ? $_POST['emailnv'] : "";
        $ChucVu =isset($_POST['cvnv']) ? $_POST['cvnv'] : "";
-       $this->M_employee->addEmployee($TenDN,$MatKhau,$MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
+       $this->M_employee->addEmployee($TenDN, $MK, $MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
        echo "<script>alert('Thành công');</script>";
        $this->getListEmployee();
       }
@@ -84,4 +88,27 @@ class Employee extends CI_Controller {
        redirect(base_url() . "index.php/employee/getListEmployee");
       }
     }
+
+    public function getListEmployeeS(){
+      if(isset($_POST['search']))
+      {
+        $s = $_POST['search'];
+        $this->session->set_userdata('search',$s);
+      }
+      else 
+      {
+        $s=$this->session->userdata('search');  
+      }
+      $s=trim(htmlspecialchars(addslashes($s)));
+      $this->load->model("M_employee");
+      $config['total_rows'] = $this->M_employee->countAllS($s);
+      $config['base_url'] = base_url()."index.php/employee/getListEmployeeS";
+      $config["per_page"]=5;
+      $start = $this->uri->segment(3);
+      $this->load->library('pagination',$config);
+      $data['listEmployee'] = $this->M_employee->getListS($start,$config['per_page'],$s);
+      $this->load->view('admin/employee_admin_view.php',$data);
+      //print_r ($s);
+    }
+   
 }

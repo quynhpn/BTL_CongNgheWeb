@@ -20,9 +20,29 @@ class M_appointment extends CI_Model{
     public function deleteByID($id){
         $this->db->query("DELETE FROM `lichhen` WHERE  lichhen.SDTKH='$id';");
     }
-    public function addAppointment($TenKH,$SDTKH,$GioHen, $NgayHen,$MaNV){
-       $query=$this->db->query("INSERT INTO `khachhang`(`SDTKH`, `TenKH`) VALUES ('$SDTKH','$TenKH');");
-       $query=$this->db->query("INSERT INTO `lichhen`(`GioHen`, `NgayHen`, `SDTKH`,`MaNV`) VALUES ('$GioHen', '$NgayHen', '$SDTKH','$MaNV');");
+    public function addAppointment($SDTKH,$GioHen, $NgayHen, $MaNV){
+       $query=$this->db->query("INSERT INTO `lichhen`(`GioHen`, `NgayHen`, `SDTKH`,MaNV) VALUES ('$GioHen', '$NgayHen', '$SDTKH', '$MaNV');");
     }
+    public function getByIDKH($id){
+        $query=$this->db->query("SELECT * FROM `lichhen` JOIN `khachhang` ON khachhang.SDTKH=lichhen.SDTKH WHERE khachhang.SDTKH='$id';");
+        return $query->row_array();
+    }
+    
+    public function editAppointment($id,$GioHen,$NgayHen){
+      $query=$this->db->query("UPDATE `lichhen` SET `GioHen`='$GioHen',`NgayHen`='$NgayHen' WHERE `SDTKH`='$id';");
+    }
+    public function countAllS($s){
+        $query=$this->db->query("SELECT * FROM lichhen JOIN khachhang ON khachhang.SDTKH=lichhen.SDTKH WHERE khachhang.TenKH like'%$s%' OR khachhang.SDTKH like'%$s%';");
+        return $query->num_rows();
+    }
+
+    public function getListS($start, $size, $s){
+        $start = isset($start)? $start : 0;
+        $query=$this->db->query("SELECT * FROM lichhen JOIN khachhang ON khachhang.SDTKH=lichhen.SDTKH WHERE khachhang.TenKH like'%$s%' OR khachhang.SDTKH like'%$s%' limit $start , $size;");
+        return $query->result_array();
+    }
+    
+
+
 }
 ?>

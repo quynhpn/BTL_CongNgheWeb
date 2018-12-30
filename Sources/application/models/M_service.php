@@ -23,6 +23,16 @@ class M_service extends CI_Model{
       $query=$this->db->query("SELECT * FROM ChiTietDV where MaDV = '$MaDV';");
       return $query->result_array();
   }
+  public function countAllS($s){
+        $query=$this->db->query("SELECT * FROM dichvu WHERE HoatDong <> 0 AND dichvu.TenDV like'%$s%';");
+        return $query->num_rows();
+    }
+
+    public function getListS($start, $size, $s){
+        $start = isset($start)? $start : 0;
+        $query=$this->db->query("SELECT * FROM dichvu WHERE HoatDong <> 0 AND dichvu.TenDV like'%$s%' limit $start , $size;");
+        return $query->result_array();
+    }
 }
 
 ?>
