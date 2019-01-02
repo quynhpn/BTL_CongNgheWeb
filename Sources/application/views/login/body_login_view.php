@@ -23,13 +23,13 @@
                             Đăng nhập quản trị
                         </h2>
                     </div>
-                    <form method="post">
+                    <form method="post" action="<?php echo base_url() . 'index.php/Login'; ?>">
                         <div class="row mt-2 position-relative">
-                            <input type="text" class="form-control" placeholder="Tên tài khoản/UserName" name="taikhoan" required/>
+                            <input type="text" class="form-control" placeholder="Tên tài khoản/UserName" name="TenDN" required/>
                                 <i class="fa fa-user position-absolute" style="top:10px;right:5px"></i>
                         </div>
                         <div class="row mt-2 position-relative">
-                            <input type="password" class="form-control" placeholder="Mật khẩu/password" name="matkhau" required/>
+                            <input type="password" class="form-control" placeholder="Mật khẩu/password" name="MatKhau" required/>
                                 <i class="fa fa-key position-absolute" style="top:10px;right:5px"></i>
                         </div>
                         <div class="row mb-2 mt-3">
@@ -43,4 +43,4 @@
                     <input type="submit" value="Đổi mật khẩu" class="btn btn-link text-white">                                            
                 </div>                  
             </div>
-        </div>
+        </div>        

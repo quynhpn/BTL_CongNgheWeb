@@ -34,7 +34,7 @@
                 </label>
               </div>
               <div class="col-md-5">
-                <input type="date" name="ngayhen" ng-model=""class="form-control" />                                   
+                <input type="date" name="ngayhen" ng-model=""class="form-control" id="date" />                                   
               </div>
             </div>
           </div>
@@ -45,6 +45,5 @@
           <p><?php echo validation_errors(); ?></p>
     </form>
   </div>      
-      
-    
+  
 </div>

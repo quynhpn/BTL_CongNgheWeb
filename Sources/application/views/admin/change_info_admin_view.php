@@ -8,7 +8,7 @@
   include_once "menu_admin_view.php";
 ?>
 <?php
-  include_once "body_appointment _admin_view.php";
+  include_once "body_change_info_admin_view.php";
 ?>
 <?php
   include_once "footer_admin_view.php";

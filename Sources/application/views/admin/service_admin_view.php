@@ -11,5 +11,8 @@
   include_once "body_service_admin_view.php";
 ?>
 <?php
+  include_once "footer_admin_view.php";
+?>
+<?php
   include_once "foot_admin_view.php";
 ?>

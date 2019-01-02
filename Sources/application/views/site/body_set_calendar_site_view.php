@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <!-- <div>
         <div class="container">
             <div class="row ">
                 <div class="col-md-4 col-lg-3"></div>
@@ -191,6 +191,152 @@
                 <div class="col-md-4 col-lg-3"></div>
           </div>
         </div>
+    </div> -->
+    <div>
+        <div class="container">
+            <div class="row mt-3 ">
+                <div class="col-md-4 col-lg-3"></div>
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
+                    
+                    <h3>CHỌN NGÀY CẮT</h3>
+                </div>
+                <div class="col-md-4 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-3"></div>
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
+                  <div>
+                    <select id="" class="form-control">
+                      <option >
+                         Hôm nay,<?php echo date("d-m-Y");?>
+                      </option>
+                      <option value="">
+                         Ngày mai,
+                        <?php
+                          $d=strtotime("tomorrow");
+                          echo date("d-m-Y", $d) . "<br>";
+                        ?>
+                      </option>
+                      <option value="">
+                          Ngày kia,
+                           <?php
+                              $startdate = strtotime("tomorrow");
+                              $enddate = strtotime("+1 days", $startdate);
+                              echo date("d-m-Y", $enddate) . "<br>";
+                            ?>
+                      </option>
+                    </select>
+                  </div>
+                  </div>
+                <div class="col-md-4 col-lg-3"></div>
+            </div>
+             <div class="row mt-3">
+                <div class="col-md-4 col-lg-3"></div>
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
+                    
+                    <h3>CHỌN GIỜ CẮT</h3>
+                </div>
+                <div class="col-md-4 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-3"></div>
+                <div class="col-md-4 col-lg-6" style="background:#fef9dc;">
+                  <div>
+                    <select id="" class="form-control">
+                      <option >
+                        09:00
+                      </option>
+                      <option value="">
+                        09:30
+                      </option>
+                      <option value="">
+                       10:00
+                      </option>
+                      <option >
+                        10:30
+                      </option>
+                      <option value="">
+                        11:00
+                      </option>
+                      <option value="">
+                       11:30
+                      </option>
+                      <option >
+                        12:00
+                      </option>
+                      <option value="">
+                        12:30
+                      </option>
+                      <option value="">
+                        13:00
+                      </option>
+                      <option >
+                        13:30
+                      </option>
+                      <option value="">
+                        14:00
+                      </option>
+                      <option value="">
+                       14:30
+                      </option>
+                      <option >
+                        15:00
+                      </option>
+                      <option value="">
+                        15:30
+                      </option>
+                      <option value="">
+                       16:00
+                      </option>
+                      <option >
+                        16:30
+                      </option>
+                      <option value="">
+                        17:00
+                      </option>
+                      <option value="">
+                       17:30
+                      </option>
+                      <option >
+                        18:00
+                      </option>
+                      <option value="">
+                        18:30
+                      </option>
+                      <option value="">
+                       19:00
+                      </option>
+                      <option >
+                        19:30
+                      </option>
+                      <option value="">
+                        20:00
+                      </option>
+                      <option value="">
+                       20:30
+                      </option>
+                      <option >
+                        21:00
+                      </option>
+                      <option value="">
+                        21:30
+                      </option>
+                    </select>
+                  </div>
+                <div class="col-md-4 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-3"></div>
+                <div class="col-md-4 col-lg-6">
+                  <div style="text-center">
+                    <a type="type" class="btn btn-dark btn_cal " style="font-size: 40px;" href="#">
+                    <i class="fa fa-calendar"></i>
+                      ĐẶT LỊCH GIỮ CHỖ
+                  </a>
+                  </div>
+                <div class="col-md-4 col-lg-3"></div>
+            </div>
+
+        </div>
     </div>
-   
 </div>
