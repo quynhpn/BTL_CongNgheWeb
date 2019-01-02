@@ -18,10 +18,10 @@
             </div>
         </form>
         <div class="row">
-            <button class="btn btn-info col-md-2 offset-md-9"data-toggle="modal" data-target="#add-modal">
+            <a class="btn btn-info col-md-2 offset-md-9" href="<?php echo base_url() . "index.php/service/add_services/"?>">
                 <i class="fa fa-user-plus"></i>
                 Thêm mới
-            </button>
+            </a>
         </div>
         <table class="table table-bordered table-hover mt-3">
             <thead>
@@ -63,11 +63,11 @@
                         </a>
                     </td>                      
                     <td>
-                        <button class="btn btn-warning"data-toggle="modal" data-target="#edit-modal">
+                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/service/edit_services/"?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>
-                        </button>
+                        </a>
                     </td>
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/service/delete/" . $row['MaDV'];?>">

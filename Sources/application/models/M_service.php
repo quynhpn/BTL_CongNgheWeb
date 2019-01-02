@@ -23,6 +23,12 @@ class M_service extends CI_Model{
       $query=$this->db->query("SELECT * FROM ChiTietDV where MaDV = '$MaDV';");
       return $query->result_array();
   }
+<<<<<<< HEAD
+  public function addServices($MaDV,$TenDV,$Gia){
+    $query=$this->db->query("INSERT INTO `dichvu` (`MaDV`, `TenDV`, `Gia`)VALUES('$MaDV','$TenDV','$Gia');");
+    $query=$this->db->query("INSERT INTO `chitietdv`(`MaDV`, `Buoc`, `Chitietbuoc`) VALUES ('$MaDV','$Buoc','$Chitietbuoc');");
+}
+=======
   public function countAllS($s){
         $query=$this->db->query("SELECT * FROM dichvu WHERE HoatDong <> 0 AND dichvu.TenDV like'%$s%';");
         return $query->num_rows();
@@ -33,6 +39,6 @@ class M_service extends CI_Model{
         $query=$this->db->query("SELECT * FROM dichvu WHERE HoatDong <> 0 AND dichvu.TenDV like'%$s%' limit $start , $size;");
         return $query->result_array();
     }
+>>>>>>> master
 }
-
 ?>

@@ -27,6 +27,15 @@ class Invoice extends CI_Controller {
       //print_r($data);
       $this->load->view('admin/invoice_admin_view.php',$data);
        //echo $this->pagination->create_links();
+<<<<<<< HEAD
+    }    
+   public function detail($id){
+     $this->load->model("M_invoice");
+     $data['dtiv']=$this->M_invoice->Detail($id);  
+     $this->load->view("admin/s_detail_invoice.php",$data);
+
+   }
+=======
     }   
     public function getListInvoiceS(){
       if(isset($_POST['search']))
@@ -53,4 +62,5 @@ class Invoice extends CI_Controller {
 
 
 
+>>>>>>> master
 }
