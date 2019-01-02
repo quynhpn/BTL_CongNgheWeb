@@ -22,63 +22,6 @@
                     Thêm mới
             </button>
         </div>
-<<<<<<< HEAD
-                <div class="row mt-3">
-                    <button class="btn btn-success col-md-2 offset-md-5">
-                        <i class="fa fa-search"></i>
-                        Tìm kiếm
-                    </button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-info col-md-2 offset-md-9">
-                        <i class="fa fa-user-plus"></i>
-                        Thêm mới
-                    </button>
-                </div>
-                <div class="row">
-                     <table class="table table-bordered table-hover mt-3">
-            <thead>
-                <tr class="table-active">
-                    <th>
-                        STT
-                    </th>
-                    <th>
-                        Mã đơn hàng
-                    </th>
-                    <th>
-                        Tên khách hàng 
-                    </th>
-                    <th>
-                        Danh sách dịch vụ
-                    </th>            
-                </tr>
-            </thead>
-            <tbody>  
-            <?php
-                $stt=0; 
-                foreach ($listInvoice as $row){
-                $stt++;
-            ?>       
-                <tr class="table-warning">
-                    <td><?php echo $stt?></td>
-                    <td><?php echo $row['MaDH']?></td>
-                    <td><?php echo $row['TenKH']?></td>
-                    <td>
-                    
-
-                    <a class="btn btn-primary" href="<?php echo base_url() . "index.php/invoice/detail/" . $row['MaDH'];?>">
-                            <i class="fa fa-edit">
-                                Chi tiết
-                            </i>
-                        </a>
-                    </td>                        
-                </tr> 
-                <?php
-                }
-                ?>           
-            </tbody>
-        </table> 
-=======
         <div class="row">
             <table class="table table-bordered table-hover mt-3">
                 <thead>
@@ -130,7 +73,6 @@
                     ?>           
                 </tbody>
             </table> 
->>>>>>> master
      </div>
      <div class="text-center">
         <?php
