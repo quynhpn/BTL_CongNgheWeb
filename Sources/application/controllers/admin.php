@@ -7,7 +7,10 @@ class Admin extends CI_Controller {
     function __construct(){
       //gọi đến hàm khưởi tạo của cha
       parent::__construct();
-
+      //Nếu chưa đăng nhập
+        if (!$this->session->userdata("CheckLogin")){
+            redirect(base_url() . "index.php/login/view");
+        }
     }
 
     public function index()
@@ -33,5 +36,9 @@ class Admin extends CI_Controller {
 
     }
   
-    
+    public function changeinfo()
+    {
+        $this->load->view('admin/change_info_admin_view.php');
+        
+    }
 }

@@ -4,28 +4,19 @@
        <div class="row mt-3">
             <h3 class="col-md-12 text-center">QUẢN LÝ DỊCH VỤ</h3>
         </div>
-        
-        <div class="row mt-3">
-            <div class="col-md-12">
-                <div class="row">
-                    <label class="col-md-4 text-center">
-                        Tên dịch vụ
-                    </label>
-                    <div class="col-md-4">
-                        <select class="form-control" id="slPositionID">
-                            <option value="0">Tất cả</option>                                 
-                        </select>
-                    </div>
+         <form action="<?php echo base_url();?>index.php/service/getListServiceS" method="post">
+            <div class="row mt-3">
+                <div class="col-md-4 offset-md-4 text-center">
+                    <input class="form-control" type="text" placeholder="Nhập nội dung tìm kiếm" name="search" />
                 </div>
             </div>
-            
-        </div>
-        <div class="row mt-3">
-            <button class="btn btn-success col-md-2 offset-md-5">
-                <i class="fa fa-search"></i>
-                Tìm kiếm
-            </button>
-        </div>
+            <div class="row mt-3">
+                <button class="btn btn-success col-md-2 offset-md-5" type="submit">
+                    <i class="fa fa-search"></i>
+                    Tìm kiếm
+                </button>
+            </div>
+        </form>
         <div class="row">
             <a class="btn btn-info col-md-2 offset-md-9" href="<?php echo base_url() . "index.php/service/add_services/"?>">
                 <i class="fa fa-user-plus"></i>
@@ -68,6 +59,7 @@
                             <i class="fa fa-edit">
                                 Chi tiết
                             </i>
+                            <!-- data-toggle="modal" data-target="#detail-modal" -->
                         </a>
                     </td>                      
                     <td>
@@ -101,8 +93,149 @@
 </div>
 </div>
 </div>
+<div >
 
 
-    
-                
+<div class="modal" tabindex="-1" role="dialog" id="add-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thêm Dịch Vụ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form  ng-controller="ctrlCategory" name="formCategory">
+                        <div class="modal-body">
+                             <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mã dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Tên dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Giá dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div >
+        <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sửa Dịch Vụ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form  ng-controller="ctrlCategory" name="formCategory">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Mã dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Tên dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-5 text-center">
+                                    <label>
+                                        Giá dịch vụ
+                                    </label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" id="" name="" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="SaveCategory()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="detail-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Chi Tiết Dịch Vụ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="container"style="padding:30px;">
+                        <table class="table table-bordered table-hover" >
+                            <?php
+                                $stt=0; 
+                                //foreach ($listInvoiceDetail as $row2){
+                                $stt++;
+                            ?>  
+                            <tr>
+                                <th>Bước</th>
+                                <th>Chi tiết bước</th>
+                            </tr>
+                            <tr>
+                                <td><?php //echo $row2['TenDV']; ?></td>
+                                <td><?php //echo $row2['Gia']; ?></td>    
+                            </tr>
+                            <?php
+                           // }
+                            ?>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>     
                 

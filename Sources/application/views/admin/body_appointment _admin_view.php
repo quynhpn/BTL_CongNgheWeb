@@ -1,43 +1,26 @@
-
  <div class="col-md-6 col-lg-10">
-                      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row mt-3">
-                    <h3 class="col-md-12 text-center">QUẢN LÝ LỊCH HẸN</h3>
+            <h3 class="col-md-12 text-center">QUẢN LÝ LỊCH HẸN</h3>
         </div>
+         <form action="<?php echo base_url();?>index.php/appointment/getListAppointmentS" method="post">
+            <div class="row mt-3">
+                <div class="col-md-4 offset-md-4 text-center">
+                    <input class="form-control" type="text" placeholder="Nhập nội dung tìm kiếm" name="search" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <button class="btn btn-success col-md-2 offset-md-5" type="submit">
+                    <i class="fa fa-search"></i>
+                    Tìm kiếm
+                </button>
+            </div>
+        </form>
         <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <label class="col-md-4">
-                                Tên khách hàng
-                            </label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="text" placeholder="Nhập tên người dùng" id="txtUserName" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <label class="col-md-4">
-                                SĐT
-                            </label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="text" placeholder="Nhập số điện thoại khách hàng" id="txtPhoneName" />
-                            </div>
-                        </div>
-                    </div>
-        </div>
-    
-        <div class="row mt-3">
-            <button class="btn btn-success col-md-2 offset-md-5">
-                <i class="fa fa-search"></i>
-                Tìm kiếm
-            </button>
-        </div>
-        <div class="row">
-            <button class="btn btn-info col-md-2 offset-md-9"data-toggle="modal" data-target="#add-modal">
+            <a class="btn btn-info col-md-2 offset-md-9" href="<?php echo base_url() . "index.php/appointment/add_appointment"; ?>">
                 <i class="fa fa-user-plus"></i>
                 Thêm mới
-            </button>
+            </a>
         </div>
         <table class="table table-bordered table-hover mt-3">
             <thead>
@@ -57,6 +40,9 @@
                     <th>
                         Ngày hẹn
                     </th>
+                    <th>
+                        Nhân viên
+                    </th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -74,12 +60,13 @@
                     <td><?php echo $row['SDTKH']?></td>
                     <td><?php echo $row['GioHen']?></td>
                     <td><?php echo $row['NgayHen']?></td>
+                    <td><?php echo $row['MaNV']?></td>
                     <td>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit-modal">
+                        <a class="btn btn-warning" href="<?php echo base_url() . "index.php/appointment/edit_appointment/". $row['SDTKH']; ?>">
                             <i class="fa fa-edit">
                                 Sửa
                             </i>
-                        </button>
+                        </a>
                     </td>
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không');" href="<?php echo base_url() . "index.php/appointment/delete/" . $row['SDTKH'];?>">
@@ -105,133 +92,7 @@
     </div>
     
 </div>
-<div >
-        <div class="modal" tabindex="-1" role="dialog" id="add-modal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Thêm Lịch Hẹn</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form  ng-controller="ctrlCategory" name="formCategory">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Tên khách hàng
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Số điện thoại
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Giờ hẹn
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập giờ hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Ngày hẹn
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập ngày hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveEmployee()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div >
-        <div class="modal" tabindex="-1" role="dialog" id="edit-modal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Sửa Lịch Hẹn</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                     <form  ng-controller="ctrlCategory" name="formCategory">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Tên khách hàng
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeeNameInsert" name="" ng-model="" placeholder="Nhập tên khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Số điện thoại
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập số điện thoại khách hàng" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Giờ hẹn
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập giờ hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-5 text-center">
-                                    <label>
-                                        Ngày hẹn
-                                    </label>
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" id="txtEmployeePhoneInsert" name="" ng-model="" placeholder="Nhập ngày hẹn" class="form-control" ng-required="true" ng-maxlength="10" />                                   
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="SaveCategory()">Lưu</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
                 
                 
