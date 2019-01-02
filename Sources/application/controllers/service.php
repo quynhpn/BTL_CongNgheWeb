@@ -39,7 +39,6 @@ class Service extends CI_Controller {
     } 
 
     public function detail($id){
-<<<<<<< HEAD
       $this->load->model("M_service");
       $data['dtsv']=$this->M_service->Detail($id);
       //print_r($data);
@@ -76,7 +75,6 @@ class Service extends CI_Controller {
       $this->load->view("admin/s_edit_services.php");
     }
 }
-=======
        $this->load->model("M_service");
       //$this->data['detail'] = $this->M_service->detail($id);
 
@@ -109,4 +107,3 @@ class Service extends CI_Controller {
     }
 
 }
->>>>>>> master
