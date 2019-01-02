@@ -1,8 +1,5 @@
-<div class="row bg-warning">
-  <div class="container bg-warning">
-   <div class="row">
-     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-
+<div class="container-fluid bg-warning" >
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-warning">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -26,10 +23,16 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url();?>/index.php/hairstyle/index"style="padding-top:25px; font-size:25px; color:black;">TÓC ĐẸP</a>
           </li>
-        
+          <?php
+            //Nếu đăng nhập là Admin
+              if ($this->session->userdata("CheckLogin")){
+          ?>
+              <li class="nav-item">
+              <a class="nav-link" style="padding-top:25px; font-size:25px; color:red; font-style: italic;" href="<?php echo base_url();?>index.php/admin">HOME ADMIN</a>
+              </li>
+          <?php } ?>
+        </div>
         </ul>
       </div>
     </nav>
-   </div>
-  </div>
 </div>

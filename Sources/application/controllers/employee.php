@@ -5,7 +5,10 @@ exit('No direct script access allowed');
 class Employee extends CI_Controller {
     public function __construct(){
       parent::__construct();
-      $this->load->library("session");
+      //Nếu chưa đăng nhập hoặc không phải admin
+        if (!$this->session->userdata("CheckLogin") || $this->session->userdata('ChucVu') != 'Quản trị'){
+            redirect(base_url() . "index.php/login/view");
+        }
     }
     public function index()
     {
@@ -53,17 +56,23 @@ class Employee extends CI_Controller {
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
         $this->add_employee();
       } else {
-       $this->load->model("M_employee");
-       $TenDN = isset($_POST['tknv']) ? $_POST['tknv'] : "";
-       $MK =isset($_POST['mknv']) ? $_POST['mknv'] : "";
-       $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
-       $TenNV = isset($_POST['tennv']) ? $_POST['tennv'] : "";
-       $SDTNV = isset($_POST['sdtnv']) ? $_POST['sdtnv'] : "";
-       $Email =isset($_POST['emailnv']) ? $_POST['emailnv'] : "";
-       $ChucVu =isset($_POST['cvnv']) ? $_POST['cvnv'] : "";
-       $this->M_employee->addEmployee($TenDN, $MK, $MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
-       echo "<script>alert('Thành công');</script>";
-       $this->getListEmployee();
+        try {
+          $this->load->model("M_employee");
+          $TenDN = isset($_POST['tknv']) ? $_POST['tknv'] : "";
+          $MK =isset($_POST['mknv']) ? $_POST['mknv'] : "";
+          $MaNV = isset($_POST['manv']) ? $_POST['manv'] : "";
+          $TenNV = isset($_POST['tennv']) ? $_POST['tennv'] : "";
+          $SDTNV = isset($_POST['sdtnv']) ? $_POST['sdtnv'] : "";
+          $Email =isset($_POST['emailnv']) ? $_POST['emailnv'] : "";
+          $ChucVu =isset($_POST['cvnv']) ? $_POST['cvnv'] : "";
+          $this->M_employee->addEmployee($TenDN, $MK, $MaNV, $TenNV, $SDTNV, $Email, $ChucVu);
+          echo "<script>alert('Thành công');</script>";
+          $this->getListEmployee();
+        } catch (Exception $e) {
+          echo "<script lang =\"js\">alert(\"Tài khoản đã tồn tại\");</script>";
+          $this->add_employee();
+        }
+       
       }
     }
     public function pro_edit_Employee($id){

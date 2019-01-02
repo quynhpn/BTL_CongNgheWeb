@@ -3,6 +3,12 @@ if (!defined('BASEPATH'))
 exit('No direct script access allowed');
  
 class TheWords extends CI_Controller {
+  public function __construct(){
+      parent::__construct();
+      if (!$this->session->userdata("CheckLogin")){
+            redirect(base_url() . "index.php/login/view");
+        }
+    }
     public function index()
     {
       $this->getListTheWord();

@@ -5,7 +5,10 @@ exit('No direct script access allowed');
 class Customer extends CI_Controller {
     public function __construct(){
       parent::__construct();
-      $this->load->library("session");
+      //Nếu chưa đăng nhập
+        if (!$this->session->userdata("CheckLogin")){
+            redirect(base_url() . "index.php/login/view");
+        }
     }
     public function index()
     {
@@ -31,13 +34,19 @@ class Customer extends CI_Controller {
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
         $this->add_customer();
       } else {
-       $this->load->model("M_customer");
-       $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
-       $TenKH = isset($_POST['tenkh']) ? $_POST['tenkh'] : "";
-       $DiaChi = isset($_POST['diachikh']) ? $_POST['diachikh'] : "";
-       $this->M_customer->addCustomer($SDTKH, $TenKH,$DiaChi);
-       echo "<script>alert('Thành công');</script>";
-       $this->getlistCustomer();
+        try {
+            $this->load->model("M_customer");
+            $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
+            $TenKH = isset($_POST['tenkh']) ? $_POST['tenkh'] : "";
+            $DiaChi = isset($_POST['diachikh']) ? $_POST['diachikh'] : "";
+            $this->M_customer->addCustomer($SDTKH, $TenKH,$DiaChi);
+            echo "<script>alert('Thành công');</script>";
+            $this->getlistCustomer();
+        }  catch (Exception $e) {
+          echo "<script lang =\"js\">alert(\"Khách hàng đã tồn tại\");</script>";
+          $this->add_customer();
+        }
+      
       }
     }
     public function add_customer(){
