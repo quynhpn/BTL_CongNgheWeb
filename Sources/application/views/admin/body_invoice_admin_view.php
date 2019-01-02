@@ -61,21 +61,13 @@
                     <td><?php echo $row['MaDH']?></td>
                     <td><?php echo $row['TenKH']?></td>
                     <td>
-                        <table class="table table-bordered table-hover" style="background-color:#DEB887;">
-                            <?php
-                                $stt=0; 
-                                foreach ($listInvoiceDetail as $row2){
-                                $stt++;
-                            ?>  
-                            <tr>
-                                <td><?php echo $stt; ?></td>    
-                                <td><?php echo $row2['TenDV']; ?></td>
-                                <td><?php echo $row2['Gia']; ?></td>    
-                            </tr>
-                            <?php
-                            }
-                            ?>
-                        </table>
+                    
+
+                    <a class="btn btn-primary" href="<?php echo base_url() . "index.php/invoice/detail/" . $row['MaDH'];?>">
+                            <i class="fa fa-edit">
+                                Chi tiết
+                            </i>
+                        </a>
                     </td>                        
                 </tr> 
                 <?php
@@ -90,7 +82,7 @@
         ?>
     </div>
     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>

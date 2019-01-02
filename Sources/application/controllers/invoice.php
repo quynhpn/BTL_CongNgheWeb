@@ -22,4 +22,10 @@ class Invoice extends CI_Controller {
 
        //echo $this->pagination->create_links();
     }    
+   public function detail($id){
+     $this->load->model("M_invoice");
+     $data['dtiv']=$this->M_invoice->Detail($id);  
+     $this->load->view("admin/s_detail_invoice.php",$data);
+
+   }
 }

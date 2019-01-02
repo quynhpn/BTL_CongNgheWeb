@@ -23,6 +23,9 @@ class M_service extends CI_Model{
       $query=$this->db->query("SELECT * FROM ChiTietDV where MaDV = '$MaDV';");
       return $query->result_array();
   }
+  public function addServices($MaDV,$TenDV,$Gia){
+    $query=$this->db->query("INSERT INTO `dichvu` (`MaDV`, `TenDV`, `Gia`)VALUES('$MaDV','$TenDV','$Gia');");
+    $query=$this->db->query("INSERT INTO `chitietdv`(`MaDV`, `Buoc`, `Chitietbuoc`) VALUES ('$MaDV','$Buoc','$Chitietbuoc');");
 }
-
+}
 ?>
