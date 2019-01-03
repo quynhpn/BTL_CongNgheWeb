@@ -1,4 +1,4 @@
-    <div class="col-md-6 col-lg-10">
+    <div class="col-md-6 col-lg-10" style="min-height: 580px;">
       <div class="container-fluid">
                 <div class="row mt-5">
                         <div class="col-xl-3 col-sm-6 mb-3">

@@ -5,7 +5,7 @@
     </div>
   </div>
   <div>
-  <form  ng-controller="ctrlThewords" name="formThewords"action="<?php echo base_url();?>index.php/thewords/pro_add_TheWords" method="post">
+  <?php echo form_open_multipart('/thewords/pro_add_TheWords'); ?>
     <div class="modal-body">
       <div class="row mt-3">
         <div class="col-md-5 text-center">
@@ -46,7 +46,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <input type="text" name="link"class="form-control"/>                                   
+          <input type="file" name="link" class="form-control"/>                                   
         </div>
       </div>
       <div class="row mt-3">

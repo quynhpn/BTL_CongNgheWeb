@@ -1,4 +1,4 @@
-<div class="col-md-6 col-lg-10">
+<div class="col-md-6 col-lg-10"style="min-height: 580px;">
     <div class="container-fluid">
         <div class="row mt-4">
             <h3 class="col-md-12 text-center">QUẢN LÝ KHÁCH HÀNG</h3>

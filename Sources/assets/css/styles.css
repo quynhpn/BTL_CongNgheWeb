@@ -2,6 +2,7 @@ body{
   background: #f7f9fc;
   padding: 0px;
   margin: 0px;
+  min-height: 1000px;
 }
 .row{
   padding: 0px;
@@ -29,6 +30,7 @@ body{
   background-color: black;
   color: white;
 }
+
 /*Admin*/
 
 

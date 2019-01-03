@@ -24,20 +24,31 @@ class TheWords extends CI_Controller {
       $this->form_validation->set_rules('tenbv', 'Tên bài viết', 'required');
       $this->form_validation->set_rules('gioithieubv', 'Giới thiệu', 'required');
       $this->form_validation->set_rules('chitietbv', 'Chi tiết', 'required');
-      $this->form_validation->set_rules('link', 'Link', 'required');
       if($this->form_validation->run()==FALSE){
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
         $this->add_theword();
       } else {
+        $config['upload_path']          = './assets/img/';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png';
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('link'))
+        {
+          echo "<script>alert('Lỗi Upload File !!!')</script>";
+           $this->add_theword();
+        }
+        else{
+
+
        $this->load->model("M_thewords");
        $TenBV =isset($_POST['tenbv']) ? $_POST['tenbv'] : "";
        $GioiThieuBV = isset($_POST['gioithieubv']) ? $_POST['gioithieubv'] : "";
        $ChiTietBV = isset($_POST['chitietbv']) ? $_POST['chitietbv'] : "";
-       $link =isset($_POST['link']) ? $_POST['link'] : "";
+       $link = $this->upload->data('file_name');
        $MaNV =isset($_POST['manv']) ? $_POST['manv'] : "";
        $this->M_thewords->addTheWords($TenBV, $GioiThieuBV, $ChiTietBV, $link, $MaNV);
        echo "<script>alert('Thành công');</script>";
        $this->getListTheWord();
+        }
       }
     }  
     public function delete($id){
@@ -60,22 +71,31 @@ class TheWords extends CI_Controller {
       $this->form_validation->set_rules('tenbv', 'Tên bài viết', 'required');
       $this->form_validation->set_rules('gioithieubv', 'Giới thiệu', 'required');
       $this->form_validation->set_rules('chitietbv', 'Chi tiết', 'required');
-      $this->form_validation->set_rules('link', 'Link', 'required');
       if($this->form_validation->run()==FALSE){
         echo "<script>alert('Lỗi nhập sai định dạng');</script>";
         $this->edit_theword($id);
       }
       else 
       {
+       $config['upload_path']          = './assets/img/';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png';
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('link'))
+        {
+          echo "<script>alert('Lỗi Upload File !!!')</script>";
+           $this->edit_theword($id);
+        }
+        else{ 
        $this->load->model("M_thewords");
        $TenBV =isset($_POST['tenbv']) ? $_POST['tenbv'] : "";
        $GioiThieuBV = isset($_POST['gioithieubv']) ? $_POST['gioithieubv'] : "";
        $ChiTietBV = isset($_POST['chitietbv']) ? $_POST['chitietbv'] : "";
-       $link =isset($_POST['link']) ? $_POST['link'] : "";
+        $link = $this->upload->data('file_name');
        $MaNV =isset($_POST['manv']) ? $_POST['manv'] : "";
        $this->M_thewords->editTheWords($id,$TenBV, $GioiThieuBV, $ChiTietBV, $link, $MaNV);
        echo "<script>alert('Thành công');</script>";
        redirect(base_url() . "index.php/thewords/getListTheWord");
+        }
       }
     }  
     public function getListThewordS(){

@@ -5,7 +5,7 @@
     </div>
   </div>
   <div>
-  <form  ng-controller="ctrlThewords" name="formThewords" action="<?php echo base_url();?>index.php/thewords/pro_edit_TheWords/<?php echo $Theword['MaBV'];?>" method="post">
+  <?php echo form_open_multipart('/thewords/pro_edit_TheWords/' . $Theword['MaBV']); ?>
     <div class="modal-body">
       <div class="row mt-3">
         <div class="col-md-5 text-center">
@@ -24,7 +24,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <textarea rows="4" cols="23" class=" form-control" name="gioithieubv"value="<?php echo $Theword['GioiThieuBV'];?>"/>
+          <textarea rows="4" cols="23" class=" form-control" name="gioithieubv"><?php echo $Theword['GioiThieuBV'];?>
           </textarea>                                   
         </div>
       </div>
@@ -35,7 +35,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <textarea rows="10" cols="23"class=" form-control" name="chitietbv"value="<?php echo $Theword['ChiTietBV'];?>"/>
+          <textarea rows="10" cols="23"class=" form-control" name="chitietbv"><?php echo $Theword['ChiTietBV'];?>
           </textarea>                                    
         </div>
       </div>
@@ -46,7 +46,7 @@
           </label>
         </div>
         <div class="col-md-7">
-          <input type="text" name="link"class="form-control" value="<?php echo $Theword['link'];?>"/>                                   
+          <input type="file" name="link"class="form-control"/>                                   
         </div>
       </div>
       <div class="row mt-3">

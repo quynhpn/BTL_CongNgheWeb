@@ -5,7 +5,7 @@
         </div>
     </div>
     <div>
-        <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/pro_edit_Employee/<?php echo $Employee['MaNV'];?>" method="post" >
+        <form action="<?php echo base_url();?>index.php/employee/pro_edit_Employee/<?php echo $Employee['MaNV'];?>" method="post" >
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5 text-center">
