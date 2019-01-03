@@ -5,7 +5,7 @@
         </div>
     </div>
     <div>
-        <form  ng-controller="ctrlEmployee" name="formEmployee" action="<?php echo base_url();?>index.php/employee/pro_add_Employee" method="post" >
+        <form action="<?php echo base_url();?>index.php/employee/pro_add_Employee" method="post" >
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5 text-center">
@@ -14,7 +14,7 @@
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="tknv" ng-model="" class="form-control" ng-required="true" ng-maxlength="10" />                                   
+                        <input type="text" name="tknv" class="form-control" ng-required="true" ng-maxlength="10" />                                   
                     </div>
                 </div>
                 <div class="row mt-3">

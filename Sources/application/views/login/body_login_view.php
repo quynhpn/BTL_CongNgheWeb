@@ -24,7 +24,7 @@
                         </h2>
                     </div>
                     <form method="post" action="<?php echo base_url() . 'index.php/Login'; ?>">
-                        <div class="row mt-2 position-relative">
+                        <div class="row mt-4 position-relative">
                             <input type="text" class="form-control" placeholder="Tên tài khoản/UserName" name="TenDN" required/>
                                 <i class="fa fa-user position-absolute" style="top:10px;right:5px"></i>
                         </div>
@@ -37,10 +37,5 @@
                         </div>
                 </div>    
                 </form>
-            </div>
-            <div class="row mt-3">                
-                <div class="col-md-12 text-center"> 
-                    <input type="submit" value="Đổi mật khẩu" class="btn btn-link text-white">                                            
-                </div>                  
             </div>
         </div>        

@@ -9,10 +9,6 @@ class Service extends CI_Controller {
             redirect(base_url() . "index.php/login/view");
         }
     }
-
-  //private $data;
-
-  private static $stt = 1;
      public function index()
     {
       $this->getListService();
@@ -25,17 +21,16 @@ class Service extends CI_Controller {
         $config["per_page"]=5;
       $start = $this->uri->segment(3);
        $this->load->library('pagination',$config);
-      //$this->data['listService'] = $this->M_service->getList($start,$config['per_page']);
-      //$this->load->view('admin/service_admin_view.php',$this->data);
-      //$this->data['detail'] = array();
       $data['listService'] = $this->M_service->getList($start,$config['per_page']);
       $this->load->view('admin/service_admin_view.php',$data);
-      Service::$stt = 2;
     }   
     public function delete($id){
       $this->load->model("M_service");
       $this->M_service->deleteByID($id);
       redirect(base_url()."index.php/service/index");
+<<<<<<< HEAD
+    }   
+=======
     } 
 
     public function detail($id){
@@ -84,6 +79,7 @@ class Service extends CI_Controller {
       echo Service::$stt;
       //$this->load->view('admin/service_admin_view.php',$data);
     }
+>>>>>>> master
     public function getListServiceS(){
       if(isset($_POST['search']))
       {
@@ -103,7 +99,63 @@ class Service extends CI_Controller {
         $this->load->library('pagination',$config);
         $data['listService'] = $this->M_service->getListS($start,$config['per_page'],$s);
         $this->load->view('admin/service_admin_view.php',$data);
-        //print_r ($s);
     }
+<<<<<<< HEAD
+    public function add_service(){
+        $this->load->view('admin/add_services_admin_view.php');
+    }
+    public function pro_add_service(){
+      //kiểm tra  bằng form validation
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('mdv', 'Mã dịch vụ', 'required');
+      $this->form_validation->set_rules('tendv', 'Tên dịch vụ', 'required');
+      $this->form_validation->set_rules('gia', 'Giá', 'required');
+      if($this->form_validation->run()==FALSE){
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
+        $this->add_service();
+      } else {
+        try {
+            $this->load->model("M_service");
+            $MaDV =isset($_POST['mdv']) ? $_POST['mdv'] : "";
+            $TenDV = isset($_POST['tendv']) ? $_POST['tendv'] : "";
+            $Gia = isset($_POST['gia']) ? $_POST['gia'] : "";
+            $this->M_service->addService($MaDV,$TenDV,$Gia);
+            echo "<script>alert('Thành công');</script>";
+            $this->getListServiceS();
+        }  catch (Exception $e) {
+          echo "<script lang =\"js\">alert(\"Dịch vụ đã tồn tại\");</script>";
+          $this->add_service();
+        }      
+      }
+    }
+    public function edit_services($id){
+       $this->load->model("M_service");
+      $data['Service'] = $this->M_service->getByID($id);
+      $this->load->view("admin/edit_service_admin_view.php",$data);
+    }
+    public function pro_edit_service($id){
+      //kiểm tra  bằng form validation
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('mdv', 'Mã dịch vụ', 'required');
+      $this->form_validation->set_rules('tendv', 'Tên dịch vụ', 'required');
+      $this->form_validation->set_rules('gia', 'Giá', 'required');
+      if($this->form_validation->run()==FALSE){
+        echo "<script>alert('Lỗi nhập sai định dạng');</script>";
+        $this->edit_services($id);
+      } else {
+        
+            $this->load->model("M_service");
+            $MaDV =isset($_POST['mdv']) ? $_POST['mdv'] : "";
+            $TenDV = isset($_POST['tendv']) ? $_POST['tendv'] : "";
+            $Gia = isset($_POST['gia']) ? $_POST['gia'] : "";
+            $this->M_service->editService($id,$MaDV,$TenDV,$Gia);
+            echo "<script>alert('Thành công');</script>";
+            $this->edit_services($id);
+        } 
+        }     
+      }
+    
+=======
 
 }
+>>>>>>> master

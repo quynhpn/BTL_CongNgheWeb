@@ -53,6 +53,10 @@ public function listPositionALl(){
         $query=$this->db->query("SELECT * FROM nhanvien JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV WHERE nhanvien.HoatDong <> 0 AND nhanvien.TenNV like'%$s%' OR nhanvien.SDTNV like '%$s%' OR nhanvien.ChucVu like '%$s%' limit $start , $size;");
         return $query->result_array();
     }
+    public function changeInfo($id,$TenNV,$SDTNV,$Email,$MK){
+      //$query=$this->query("UPDATE `taikhoan` SET`MatKhau`='$MatKhau' WHERE MaNV='$id';");
+      $this->db->query("UPDATE `nhanvien` JOIN taikhoan ON nhanvien.MaNV=taikhoan.MaNV SET `TenNV`='$TenNV',`SDTNV`='$SDTNV',`Email`='$Email', MatKhau='$MK' WHERE  nhanvien.MaNV='$id' AND nhanvien.HoatDong <> 0 AND taikhoan.HoatDong<>0;");
+    }
 }
 
 ?>

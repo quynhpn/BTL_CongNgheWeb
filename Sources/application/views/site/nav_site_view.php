@@ -9,8 +9,19 @@
         <button class="btn btn-dark my-2 my-sm-0" type="submit">
           <i class="fa fa-search"></i>
         </button>
-        <a href="<?php echo base_url();?>/index.php/login/view"><i class="fa fa-cog"style="color:white;padding-left:100px;"></i></a>
+        
+        
       </form>
+      <?php
+            //Nếu đăng nhập
+              if ($this->session->userdata("CheckLogin")){
+          ?>            
+              <a class = "btn" href="<?php echo base_url();?>index.php/admin"><i class="fa fa-home" style="color:white"></i></a>              
+          <?php 
+          }else{?>
+              <a class = "btn" href="<?php echo base_url();?>index.php/login/view"><i class="fa fa-cog" style="color:white"></i></a>
+          <?php }          
+          ?>      
     </nav>
   </div>
 </div>

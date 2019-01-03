@@ -34,7 +34,6 @@ class Appointment extends CI_Controller {
     public function add_appointment(){
       //print_r($data['NV']);
       $this->load->view("admin/add_appointment_admin_view.php");
-
     }
     public function edit_appointment($id){
       $this->load->model("M_appointment");
@@ -60,21 +59,10 @@ class Appointment extends CI_Controller {
        $SDTKH =isset($_POST['sdtkh']) ? $_POST['sdtkh'] : "";
        $GioHen = isset($_POST['giohen']) ? $_POST['giohen'] : "";
        $NgayHen = isset($_POST['ngayhen']) ? $_POST['ngayhen'] : "";
-      
-        // if($_SESSION['LVadmin'] = 'CK'){
-        //   $MaNV = 'CK';
-        // } else{
-        //   $MaNV = 'AD';
-        // }
           $MaNV = 'AD';
-
-        //print_r($_POST);
-        //Nếu SDTKH đã có trong database -->có thể làm khóa ngoại cho bảng lịch hẹn
         $this->load->model("M_customer");
         $kt = $this->M_customer->checkByIDKH($SDTKH);
-        //print_r($kt);
         if ($kt > 0) {
-           //$this->M_customer->editCustomer($SDTKH,"","");
         }
         //Nếu SĐT ko có
         else{

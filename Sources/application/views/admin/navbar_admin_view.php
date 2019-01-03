@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top" style="color: #fff;">
-    <a class="navbar-brand mr-1">Start Bootstrap</a>
+    <a class="navbar-brand mr-1">BarBer Shop</a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0">
         <i class="fa fa-bars"></i>
     </button>
@@ -15,7 +15,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="<?php echo base_url().'index.php/login/logout';?>">Đăng xuất</a>
-                    <a class="dropdown-item" href="<?php echo base_url().'index.php/admin/changeinfo'; ?>">Sửa thông tin cá nhân</a>
+                    <a class="dropdown-item" href="<?php echo base_url().'index.php/admin/info/' . $this->session->userdata('MaNV'); ?>">Sửa thông tin cá nhân</a>
                 </div>
             </li>
     </ul>
